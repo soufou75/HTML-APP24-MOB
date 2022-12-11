@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<title>Page title</title>
+				
+				
+				<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+<link rel="stylesheet" href="https://unpkg.com/luda/dist/css/luda-default.min.css"></link>
+
+				
+				<script src="https://unpkg.com/luda/dist/js/luda-degradation.min.js"></script>
+				
+				
+				<script src="https://unpkg.com/luda/dist/js/luda.min.js"></script>
+				
+				
+</head>
+<body>
+				
+				
+				
+				<div id="game" 
+class="memory-card-game" 
+data-round-seconds="60" 
+data-counts="16" 
+data-images='[
+  "https://img5.uploadhouse.com/fileuploads/17699/176992640c06707c66a5c0b08a2549c69745dc2c.png",
+  "https://img6.uploadhouse.com/fileuploads/17699/17699263b01721074bf094aa3bc695aa19c8d573.png",
+  "https://img6.uploadhouse.com/fileuploads/17699/17699262833250fa3063b708c41042005fda437d.png",
+  "https://img9.uploadhouse.com/fileuploads/17699/176992615db99bb0fd652a2e6041388b2839a634.png",
+  "https://img4.uploadhouse.com/fileuploads/17699/176992601ca0f28ba4a8f7b41f99ee026d7aaed8.png",
+  "https://img3.uploadhouse.com/fileuploads/17699/17699259cb2d70c6882adc285ab8d519658b5dd7.png",
+  "https://img2.uploadhouse.com/fileuploads/17699/1769925824ea93cbb77ba9e95c1a4cec7f89b80c.png",
+  "https://img7.uploadhouse.com/fileuploads/17699/1769925708af4fb3c954b1d856da1f4d4dcd548a.png",
+  "https://img9.uploadhouse.com/fileuploads/17699/176992568b759acd78f7cbe98b6e4a7baa90e717.png",
+  "https://img9.uploadhouse.com/fileuploads/17699/176992554c2ca340cc2ea8c0606ecd320824756e.png"
+]'></div>
+<!-- The image addresses are copied from https://codepen.io/mel/details/Brads -->
+
+
+
+<div id="pannel" data-toggle-target class="overlay toggle-active">
+  
+  <div class="overlay-body">
+    
+    <div data-toggleable="false" 
+    class="article px-medium pb-medium bc-dark c-light rounded sd-high">
+      
+      <div class="introduction px-small">
+        <h1 class="fw-bold">Memory Card Game</h1>
+        
+        <p>
+          You'll need find all matched cards in
+          <span id="round-seconds">60</span> seconds.
+          <br class="d-none d-block-m">
+          Let's see how far you can go.<br>
+          Good luck!
+        </p>
+      </div>  <!-- End of .introduction -->
+      
+      <div class="succeed px-small">
+        <h1 class="fw-bold c-primary">Well Done~</h1>
+        <p>
+          You can try a higher level, keep challenging yourself!<br>
+          You're the best!
+        </p>
+      </div>
+      
+      <div class="failed px-small">
+        <h1 class="fw-bold">Gameover...</h1>
+        <p>
+          Don't be upset, try again!<br>
+          You can do better!
+        </p>
+      </div>
+      
+      <div class="grid">
+        
+        <div class="col-auto">
+          <div class="fm fm-select">
+            <select id="game-level">
+              <option value="16" selected>Easy</option>
+              <option value="24">Medium</option>
+              <option value="32">Hard</option>
+              <option value="40">Nightmare</option>
+             </select>
+          </div>
+        </div>
+        
+        <div class="col-auto">
+          <button id="start"
+          data-toggleable 
+          class="btn btn-fluid btn-primary fw-bold">
+            Let's Go!
+          </button>
+        </div>
+        
+      </div> <!-- End of .grid -->
+      
+    </div>  <!-- End of .article -->
+    
+  </div>  <!-- End of .overlay-body -->
+  
+</div>  <!-- End of #pannel -->
+				
+				
+				<style>
+								
+								
+								
+								html,
+body{
+  height: 100%;
+}
+
+
+
+.memory-card-game{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  background: #383838;
+}
+
+
+
+.timeline{
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 0.8rem;
+  pointer-events: none;
+}
+
+.timeline > div{
+  height: 100%;
+  background: #d12626;
+  opacity: 0.9;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.2s ease;
+}
+
+
+
+.card{
+  position: relative;
+  flex: 0 0 25%;
+  overflow: hidden;
+  background: #fa73a0;
+  border: solid 2px #383838;
+  cursor: pointer;
+}
+
+.card::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 101%;
+  height: 101%;
+  background: #383838;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.3s ease;
+}
+
+.card.active::before,
+.card.hidden::before{
+  opacity: 1;
+}
+
+.card img{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 0.5rem;
+  margin: auto;
+  transition: opacity, transform 0.3s ease;
+}
+
+.card.active img{
+  opacity: 1;
+  transform: scale(1) translate3d(0, 0, 0);
+}
+
+.card img,
+.card.hidden img{
+  opacity: 0;
+  transform: scale(0) translate3d(0, 0, 0);  
+}
+
+
+
+#pannel[data-succeed=true] .introduction,
+#pannel[data-succeed=true] .failed{
+  display: none;
+}
+
+#pannel[data-succeed=true] .succeed{
+  display: block;
+}
+
+#pannel[data-succeed=false] .introduction,
+#pannel[data-succeed=false] .succeed{
+  display: none;
+}
+
+#pannel[data-succeed=false] .failed{
+  display: block;
+}
+
+#pannel:not([data-succeed]) .introduction{
+  display: block;
+}
+
+#pannel:not([data-succeed]) .succeed,
+#pannel:not([data-succeed]) .failed{
+  display: none;
+}
+								
+								
+								
+				</style>
+				
+				
+				<script>
+								
+								
+								
+							// Define the card child component
+// https://oatw.github.io/luda/0.3.x/advanced/component#define-component-classes
+luda.component('card')
+// Define self maintained css classes as private properties.
+// https://oatw.github.io/luda/0.3.x/advanced/component#private-property
+.protect('cls', {
+  active: 'active', 
+  hidden: 'hidden'
+})
+// Define image src passed in from parent component as a public property.
+// https://oatw.github.io/luda/0.3.x/advanced/component#public-property
+.include('src', function(){
+  // Get the value of data-src of this component's root element.
+  // https://oatw.github.io/luda/0.3.x/advanced/api#root
+  // https://oatw.github.io/luda/0.3.x/advanced/api#data-name-value
+  return this.root.data('src')
+})  
+// Define a private method of this component.
+// https://oatw.github.io/luda/0.3.x/advanced/component#private-property
+.protect('insertImage', function(){
+  // Set the innerHTML of this component's root element.
+  // https://oatw.github.io/luda/0.3.x/advanced/api#html-html
+  this.root.html(`<img src="${this.src()}"/>`)
+})
+// Define public methods of this component.
+// https://oatw.github.io/luda/0.3.x/advanced/component#public-property
+.include({
+  isHidden(){
+    // Check if the component's root element has the .hidden class.
+    // https://oatw.github.io/luda/0.3.x/advanced/api#hasclass-name
+    return this.root.hasClass(this.cls.hidden)
+  },
+  transitionDuration(){
+    // Get the transition duration in milliseconds.
+    // https://oatw.github.io/luda/0.3.x/advanced/api#transitionduration-
+    return this.img.transitionDuration()
+  },
+  activate(){
+    // Add the .active class to this component's root element.
+    // https://oatw.github.io/luda/0.3.x/advanced/api#addclass-name
+    this.root.addClass(this.cls.active)
+  },
+  deactivate(){
+    // Remove the .active class from this component's root element.
+    // https://oatw.github.io/luda/0.3.x/advanced/api#removeclass-name
+    this.root.removeClass(this.cls.active)
+  },
+  hide(){
+    this.root.addClass(this.cls.hidden)
+  },
+  show(){
+    this.root.removeClass(this.cls.hidden)
+  }
+})
+// Define component helpers.
+// https://oatw.github.io/luda/0.3.x/advanced/component#define-component-helpers
+.help({
+  // The find helper for accessing dom elements.
+  // https://oatw.github.io/luda/0.3.x/advanced/component#the-find-helper
+  find(){
+    return {img: 'img'}
+  },
+  // Executes on component creating.
+  // https://oatw.github.io/luda/0.3.x/advanced/component#the-create-helper
+  create(){
+    this.deactivate()
+    this.show()
+    this.insertImage()
+  }
+})
+
+
+
+// Define the timeline child component.
+luda.component('timeline')
+// Datas passed in from parent component.
+.include({
+  totalSeconds(){
+    return this.root.data('total') || 0
+  },
+  secondsRemaining(){
+    return this.root.data('remaining') || 0
+  }
+})
+// Define private methods.
+.protect({
+  updateLine(){
+    let distance = (this.secondsRemaining() / this.totalSeconds()) || 1
+    // https://oatw.github.io/luda/0.3.x/advanced/api#css-property-value
+    this.line.css('transform', `translate3d(-${distance * 100}%, 0, 0)`)
+  }
+})
+// Define component helpers.
+.help({
+  find(){
+    return {line: 'div'}
+  },
+  create(){
+    this.root.html('<div></div>')
+  },
+  // The watch helper for watching dom tree mutations.
+  // https://oatw.github.io/luda/0.3.x/advanced/component#the-watch-helper
+  watch(){
+    return {
+      node: [['div', this.updateLine]],
+      attr: [['data-total, data-remaining', this.updateLine]]
+    }
+  }
+})
+
+
+
+// Define the parent component.
+luda.component('memoryCardGame')
+// Self maintained properties.
+.protect({
+  secondsRemaining: 0,
+  hiddenCardCounts: 0,
+  pendingCard: null,
+  timer: null,
+  started: false,
+  isDissmissing: false
+})
+// Properties passed in from outside.
+.include({
+  imageSource(){
+    return this.root.data('images') || []
+  },
+  // Ensure the count number is even.
+  cardCounts(){
+    if(counts = this.root.data('counts')){
+      return Math.floor(counts / 2) * 2
+    }else{
+      return 16
+    }
+  },
+  roundSeconds(){
+    return this.root.data('round-seconds') || 5 * 60
+  }
+})
+// Define component public methods in an object.
+.include({
+  start(){
+    if(!this.started){
+      this.started = true
+      this.checkTimeout()
+    }
+  },
+  reset(){
+    clearTimeout(this.timer)
+    this.started = false
+    this.secondsRemaining = this.roundSeconds()
+    this.pendingCard = null
+    this.hiddenCardCounts = 0
+    this.isDismissing = false
+    this.insertChildren()
+  }
+})
+// Define component private methods in an object.
+.protect({
+  isSucceed(){
+    return this.hiddenCardCounts >= this.cardCounts()
+  },
+  checkTimeout(){
+    this.timer = setTimeout(() => {
+      this.timeline.data('remaining', this.secondsRemaining -= 1)
+      if(this.secondsRemaining > 0){
+        this.checkTimeout()
+      }else{
+        if(!this.isSucceed()){
+          this.reset()
+          // Dispatch a event from this component.
+          // https://oatw.github.io/luda/0.3.x/advanced/api#trigger-name-data-callback
+          this.root.trigger('memoryCardGame:finished', {succeed: false})
+        }
+      }
+    }, 1000)
+  },
+  // Child component instances will be automatically created
+  // when matched elements inserted to document.
+  insertChildren(){
+    let tpl = `
+      <div class="timeline"
+        data-total="${this.roundSeconds()}"
+        data-remaining="${this.secondsRemaining}">
+      </div>
+    `
+    tpl += this.shuffleImageSource().map(function(src){
+      return `<div class="card" data-src="${src}"></div>`
+    }).join('')
+    this.root.html(tpl)
+  },
+  shuffleImageSource(){
+    let source = this.imageSource()
+    if(source.length){
+      let halfCounts = this.cardCounts() / 2
+      while(source.length < halfCounts){
+        source = source.concat(source)
+      }
+      source = source.splice(0, halfCounts)
+      source = source.concat(source)
+      let picked, randomIndex
+      let pickedIndex = source.length
+      while(pickedIndex){
+        pickedIndex -= 1
+        randomIndex = Math.floor(Math.random() * pickedIndex)
+        picked = source[pickedIndex]
+        source[pickedIndex] = source[randomIndex]
+        source[randomIndex] = picked
+      }
+    }
+    return source
+  },
+  compareCards(event){
+    if(!this.started || this.isDismissing) { return }
+    let current = event.currentTarget
+    let pending = this.pendingCard
+    // Use component proxy to pick component instances.
+    // https://oatw.github.io/luda/0.3.x/advanced/component#named-component
+    let currentCard = luda.card(current)
+    // Use chain: false to break the chain api
+    // https://oatw.github.io/luda/0.3.x/advanced/component#other-things
+    let currentIsHidden = currentCard.isHidden({chain: false})[0]
+    if(current === pending || currentIsHidden){ return }
+    currentCard.activate()
+    if(!pending){ return this.pendingCard = current }
+    let bothCards = luda.card([current, pending])
+    let bothSrcs = bothCards.src({chain: false})
+    this.pendingCard = null
+    if(bothSrcs[0] === bothSrcs[1]){
+      this.hiddenCardCounts += 2
+      bothCards.hide()
+      if(this.isSucceed()){
+        this.reset()
+        this.root.trigger('memoryCardGame:finished', {succeed: true})
+      }
+    }else{
+      this.isDismissing = true
+      setTimeout(() => {
+        this.isDismissing = false
+        bothCards.deactivate()
+      }, currentCard.transitionDuration({chain: false})[0])
+    }
+  }
+})
+// Define component helpers.
+.help({
+  find(){
+    return {timeline: '.timeline'}
+  },
+  create(){
+    this.reset()
+  },
+  // Listen component events.
+  // https://oatw.github.io/luda/0.3.x/advanced/component#the-listen-helper
+  listen(){
+    return [['click', '.card', this.compareCards]]
+  },
+  watch(){
+    return {attr: [
+        ['data-images', this.reset],
+        ['data-counts', this.reset],
+        ['data-round-seconds', this.reset]
+    ]}
+  }
+})
+
+
+
+// Executes when document ready.
+// https://oatw.github.io/luda/0.3.x/advanced/api#ready-callback
+luda.ready(function(){
+  // Set textContent of an element.
+  // https://oatw.github.io/luda/0.3.x/advanced/api#text-
+  luda('#round-seconds').text(luda('#game').data('round-seconds'))
+  // Set the value of a form element.
+  // https://oatw.github.io/luda/0.3.x/advanced/api#val-value
+  luda('#game-level').val(luda('#game').data('counts'))
+  // Add event listeners.
+  // https://oatw.github.io/luda/0.3.x/advanced/api#on-name-selector-callback
+  luda(document)
+  .on('click', '#start', function(){
+    luda.memoryCardGame('#game').start()
+  })
+  .on('change', '#game-level', function(event, imageCounts){
+    luda('#game').data('counts', luda(this).val())
+  })
+  .on('memoryCardGame:finished', '#game', function(event, result){
+    luda('#pannel').data('succeed', result.succeed)
+    luda.toggle('#pannel').activate()
+  })
+})
+							
+							
+							
+				</script>
+				
+				
+				
+				
+</body>
+</html>
