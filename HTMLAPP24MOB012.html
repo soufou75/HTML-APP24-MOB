@@ -1,0 +1,823 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="freeCodeCamp tic-tac-toe challenge">
+    <meta name="author" content="Tindo Ngoufo Arsel">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>tic-tac-toe | tnga</title>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css"></link>
+
+<link rel="stylesheet" href="https://tnga.github.io/sharedbazar/lib/iui/0.0/iui.min.css"></link>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+
+<script src="https://tnga.github.io/lib.ijs/partials/i_core.min.js"></script>
+
+
+<script src="https://tnga.github.io/lib.ijs/partials/i_animation.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <div id="i-main-block">
+      
+      <h3 class="i-block sb-style">
+        <span>tic-tac-toe</span>
+        <small>
+          <label><input type="radio" name="level" value="easy" checked /> easy</label>
+          <label><input type="radio" name="level" value="hard" /> hard</label>
+        </small>
+         <small>
+           <label><input type="radio" name="weapon" value="x" checked /> <i class='fa fa-times'></i></label>
+           <label><input type="radio" name="weapon" value="o" /> <i class='fa fa-circle-o'></i></label>
+        </small>
+          <small>
+           <label><input type="checkbox" name="sound" value="enable" checked /> <i class='fa fa-volume-up'></i></label>
+        </small>
+        <small>
+          <label title="dark"><input type="checkbox" name="theme" value="enable" /> <i class='fa fa-adjust'></i></label>
+        </small>
+      </h3>
+      
+      <div class="i-block i-grid" id="display">
+        <button class="grid col-1-of-3" id="b-0"></button>
+        <button class="grid col-1-of-3" id="b-1"></button>
+        <button class="grid col-1-of-3" id="b-2"></button>
+        <button class="grid col-1-of-3" id="b-3"></button>
+        <button class="grid col-1-of-3" id="b-4"></button>
+        <button class="grid col-1-of-3" id="b-5"></button>
+        <button class="grid col-1-of-3" id="b-6"></button>
+        <button class="grid col-1-of-3" id="b-7"></button>
+        <button class="grid col-1-of-3" id="b-8"></button>
+        
+        <dialog>
+          <i class="fa fa-rocket"></i>
+          <p id="info-winner"></p>
+          <strong>click to play</strong>
+        </dialog>
+      </div>
+      
+      <div class="i-block st-style" id="footer">
+        <center>
+          <div id ="score-0"><i class="fa fa-2x fa-user"></i> <span>0</span></div>
+          <div id ="score-1"><i class="fa fa-2x fa-ban"></i> <span>0</span></div>
+          <div id ="score-2"><i class="fa fa-2x fa-laptop"></i> <span>0</span></div>
+          <br/>
+          <br/>
+          <small>Welcome <i class="fa fa-heart" id="with-love" style="color:red"></i> play <a href="https://github.com/tnga" target="_blank">tic-tac-toe</a></small>
+        </center>
+      </div>
+
+    </div>
+    
+    
+    
+    
+    
+    <style>
+    				
+    				#display {
+ 
+  height: 350px ;
+  width: 550px ;
+  position: relative ;
+  margin: auto ;
+}
+#display >.col-1-of-3 {
+ 
+  /*@NOTE take iui col-1/3 width; so remember to add squared col possibility in future-dev*/
+  height: 31.33333% ; 
+  width: 30.9999% ; /*fix for unstable iui grid system*/
+  font-size: 5em ;
+}
+#display >dialog {
+
+  position: absolute;
+  display: block ;
+  padding: 0px ;
+  border: none ;
+  top: 0px ;
+  left: 0px ;
+  width: 100% ;
+  height: 100% ;
+  background-color: rgba(255, 255, 255, 0.9) ;
+  text-align: center ;
+  cursor: pointer ;
+  z-index: 100 ;
+}
+#display >dialog i.fa {
+
+  font-size: 7em ;
+  margin-top: 15% ;
+}
+#display >dialog #info-winner {
+
+  color: #f60 ;
+  letter-spacing: 5px ;
+  font-weight: bolder ;
+  font-size: 1.3em ;
+}
+
+#footer {
+  
+  padding-bottom: 10px ;
+  margin-bottom: 0px ;
+}
+#footer >center >div {
+  
+  display: inline-block ;
+  margin-left: 5px ;
+  margin-right: 5px ;
+  font-size: 1.5em ;
+}
+
+.i-block {
+  
+  background-color: white;
+}
+
+.semi-display {
+  
+  opacity: 0.7 ;
+}
+
+h3.i-block, h3.i-block.sb-style {
+  
+  margin-top: 0px ;
+  padding-bottom: 10px ;
+}
+h3.i-block >span:first-of-type{
+  
+  font-family: "GE Inspira", _GE_Inspira ;
+}
+h3.i-block small {
+  
+  display: inline-block ;
+  padding-bottom: 7px ;
+}
+
+body {
+  
+  background-color: #f5f5f5;
+}
+
+/*dark theme*/
+
+body.dark-theme, #display >dialog.dark-theme {
+  
+  color: white ;
+}
+body.dark-theme {
+  
+  background-color: #606060 ; 
+}
+.i-block.dark-theme {
+  
+  background-color: #404040 ;
+}
+#display >dialog.dark-theme {
+  
+  background-color: rgba(48, 48, 48, 0.9) ;
+}
+/*end of dark theme*/
+
+
+@media (max-width: 640px) {
+  
+  #display {
+
+    height: 250px ;
+    width: 350px ;
+  }
+  #display >.col-1-of-3 {
+
+    font-size: 3em ;
+  }
+}
+@media (max-width: 420px) {
+  
+  #display {
+
+    height: 250px ;
+    width: 250px ;
+  }
+  
+  #footer >center >div .fa-2x {
+
+    font-size: 1.8em ;
+  }
+}
+    				
+    				
+    </style>
+    
+    <script>
+    				
+    				/* thanks to : MutantSpore <https://codepen.io/MutantSpore>
+ * by : tnga <https://github.com/tnga> - 2016
+*/
+
+$(document).ready( function() {
+  
+    var squares = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+    var used = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var X_token = "<i class='fa fa-times'></i>";
+    var O_token = "<i class='fa fa-circle-o'></i>";
+    var humanPlayer = X_token;
+    var aiPlayer = O_token;
+    var empty = 0;
+    var human = 1;
+    var ai = 2;
+    var hasMoved = false;
+    var gameOver = false;
+    var how = [];
+    var score = [0, 0, 0];
+    var delay;
+    var move = {};
+    var moveCounter = 0;
+    var score_TIE = 1;
+    var score_HUMAN = 0;
+    var score_AI = 2;
+    var outcome = null;
+    var gameLevel = "easy";
+    var enableSound = true;
+
+
+    var board = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+
+    var win = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+
+
+    var humanSound = new Audio('//tnga.github.io/sharedbazar/sounds/trained.mp3');
+    var aiSound = new Audio('//tnga.github.io/sharedbazar/sounds/knob.mp3');
+    var humanWinSound = new Audio('//tnga.github.io/sharedbazar/sounds/applause.mp3');
+    var aiWinSound = new Audio('//tnga.github.io/sharedbazar/sounds/babanana-mini.mp3');
+    var nullWinSound = new Audio('//tnga.github.io/sharedbazar/sounds/discreet-song.mp3');
+    var easySound = new Audio('//tnga.github.io/sharedbazar/sounds/early-sunrise-song.mp3');
+    var hardSound = new Audio('//tnga.github.io/sharedbazar/sounds/mission-impossible.mp3');
+    
+    easySound.loop = true ;
+    hardSound.loop = true ;
+
+
+
+    function setNewGame () {
+        
+        squares.forEach( function (v) {
+            $('#b-' + v).empty();
+            $('#b-' + v).removeClass('semi-display');
+        });
+
+        board = [
+            [0, 0, 0],
+            [0, 0, 0],
+            [0, 0, 0]
+        ];
+        hasMoved = false;
+        outcome = null;
+        moveCounter = 0;
+        gameOver = false;
+        how = [];
+        move = {};
+    }
+
+
+    function playSound (sound) {
+        
+        if (enableSound) sound.play();
+    }
+
+
+    function moveHUMAN (here) {
+        
+        if (!(board[here.x][here.y])) {
+            board[here.x][here.y] = human;
+            playSound( humanSound );
+            drawMove(here, humanPlayer, 100);
+            hasMoved = true;
+        }
+    }
+
+
+    function moveAI_Rnd () {
+        
+        var min = Math.min.apply(null, board.reduce(function(a, b) {
+            return a.concat(b);
+        }, []));
+
+        var whereMove = {};
+
+        if (min === 0) {
+            while (!(hasMoved)) {
+                whereMove.x = Math.floor(Math.random() * 3);
+                whereMove.y = Math.floor(Math.random() * 3);
+                if (!(board[whereMove.x][whereMove.y])) {
+                    board[whereMove.x][whereMove.y] = ai;
+                    drawMove(whereMove, aiPlayer, 300);
+                    playSound( aiSound );
+                    hasMoved = true;
+                }
+            }
+        }
+    }
+
+
+
+
+    function moveAI_Wiki () {
+
+        // transfer board to used
+        used = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+        var corner = [0, 2, 6, 8];
+        var side = [1, 3, 5, 7];
+        var count = 0;
+        var theMove = null;
+        for (var row = 0; row <= 2; row++) {
+            for (var col = 0; col <= 2; col++) {
+                used[count] = board[row][col];
+                count++;
+            }
+        }
+
+        function move () {
+            
+            var whereMove = {};
+            whereMove.x = parseInt(theMove / 3);
+            whereMove.y = theMove % 3;
+            board[whereMove.x][whereMove.y] = ai;
+            drawMove(whereMove, aiPlayer, 300);
+            playSound( aiSound );
+            hasMoved = true;
+            moveCounter++;
+        }
+
+
+        // opening move
+        function opening () {
+            
+            if (theMove === null && (used[1] === human || used[3] === human)) {
+                theMove = 0;
+                move();
+            }
+
+            if (theMove === null && (used[5] === human || used[7] === human)) {
+                theMove = 8;
+                move();
+            }
+
+            if (used[4] === human && theMove === null) {
+                emptyCorner();
+                return;
+            }
+
+            if (used[4] === empty && theMove === null && moveCounter === 0 && aiPlayer === X_token) {
+                theMove = corner[Math.floor(Math.random() * 4)];
+                move();
+            }
+
+            if (used[4] === empty && theMove === null) {
+                playCenter();
+                return;
+            }
+        }
+
+
+        // look for a win
+        function aWin () {
+            
+            win.forEach( function (solution) {
+                if ((used[solution[0]] === ai && used[solution[1]] === ai && used[solution[2]] == empty) ||
+                    (used[solution[0]] === ai && used[solution[1]] === empty && used[solution[2]] == ai) ||
+                    (used[solution[0]] === empty && used[solution[1]] === ai && used[solution[2]] == ai)) {
+
+                    solution.forEach( function (pos) {
+                        if (used[pos] === empty && theMove === null) {
+                            theMove = pos;
+                        }
+                    });
+                    move();
+                }
+            });
+        }
+
+
+        // look for a block
+        function block () {
+            
+            if (used[4] === empty && theMove === null) {
+                playCenter();
+                return;
+            }
+
+            win.forEach( function (solution) {
+                if ((used[solution[0]] === human && used[solution[1]] === human && used[solution[2]] == empty) ||
+                    (used[solution[0]] === human && used[solution[1]] === empty && used[solution[2]] == human) ||
+                    (used[solution[0]] === empty && used[solution[1]] === human && used[solution[2]] == human)) {
+
+                    solution.forEach( function (pos) {
+                        if (used[pos] === empty && theMove === null) {
+                            theMove = pos;
+                        }
+                    });
+                    move();
+                }
+            });
+        }
+
+
+        // make fork
+        function fork () {
+            
+            win.forEach( function (solution) {
+                if ((used[solution[0]] === ai && used[solution[1]] === empty && used[solution[2]] == empty) ||
+                    (used[solution[0]] === empty && used[solution[1]] === empty && used[solution[2]] == ai) ||
+                    (used[solution[0]] === empty && used[solution[1]] === ai && used[solution[2]] == empty)) {
+
+                    if (used[4] === ai &&
+                        (([used[0] === human] && used[8] === human) || ([used[2] === human] && used[6] === human))) {
+                        side.forEach( function (pos) {
+                            if (used[pos] === empty && theMove === null) {
+                                theMove = pos;
+                            }
+                        });
+                    } else {
+                        corner.forEach( function (pos) {
+                            if (used[pos] === empty && theMove === null) {
+                                theMove = pos;
+                            }
+                        });
+                    }
+                    move();
+                }
+            });
+        }
+
+
+        // block fork
+        function blockFork () {
+            
+            if (moveCounter > 1 && used[4] !== empty && theMove === null) {
+                emptySide();
+                return;
+            }
+
+            win.forEach( function (solution) {
+                if ((used[solution[0]] === human && used[solution[1]] === empty && used[solution[2]] == empty) ||
+                    (used[solution[0]] === empty && used[solution[1]] === empty && used[solution[2]] == human) ||
+                    (used[solution[0]] === empty && used[solution[1]] === human && used[solution[2]] == empty)) {
+
+                    side.forEach( function (pos) {
+                        if (used[pos] === empty && theMove === null) {
+                            theMove = pos;
+                        }
+                    });
+                    move();
+                }
+            });
+        }
+
+
+        // play center
+        function playCenter () {
+            
+            if (used[4] === empty && theMove === null) {
+                theMove = 4;
+                move();
+            }
+        }
+
+
+        // opposite corner
+        function oppositeCorner () {
+            
+            if (used[0] === human && used[8] === empty && theMove === null) {
+                theMove = 8;
+                move();
+            } else if (used[0] === empty && used[8] === human && theMove === null) {
+                theMove = 0;
+                move();
+            } else if (used[2] === human && used[6] === empty && theMove === null) {
+                theMove = 6;
+                move();
+            } else if (used[2] === empty && used[6] === human && theMove === null) {
+                theMove = 2;
+                move();
+            }
+        }
+
+
+        // empty corner
+        function emptyCorner () {
+            
+            corner.forEach( function (pos) {
+                if (used[pos] === empty && theMove === null) {
+                    theMove = pos;
+                    move();
+                }
+            });
+        }
+
+
+        //empty side
+        function emptySide () {
+            
+            side.forEach( function (pos) {
+                if (used[pos] === empty && theMove === null) {
+                    theMove = pos;
+                    move();
+                }
+            });
+        }
+
+
+        //based on wikipedia solution
+        // https://en.wikipedia.org/wiki/Tic-tac-toe
+
+        //0. opening move
+        if (theMove === null && moveCounter === 0) {
+            opening();
+        }
+
+        //1. Win
+        if (theMove === null) {
+            aWin();
+        }
+
+        //2. Block
+        if (theMove === null) {
+            block();
+        }
+
+        //3. Fork
+        if (theMove === null) {
+            fork();
+        }
+
+        //4. Block Fork
+        if (theMove === null) {
+            blockFork();
+        }
+
+        //5. Center
+        if (theMove === null) {
+            playCenter();
+        }
+
+        //6. Opposite corner
+        if (theMove === null) {
+            oppositeCorner();
+        }
+
+        //7. Empty corner
+        if (theMove === null) {
+            emptyCorner();
+        }
+
+        //8. Empty side
+        if (theMove === null) {
+            emptySide();
+        }
+    }
+
+
+
+    function drawMove (location, who, delay) {
+        
+        setTimeout( function () {
+            $('#b-' + (location.x * 3 + location.y)).html("<span class='who valign center-align animated fadeIn'>" + who + "</span>");
+        }, delay);
+    }
+
+
+    function checkStatus () {
+
+        var min = Math.min.apply(null, board.reduce(function(a, b) {
+            return a.concat(b);
+        }, []));
+
+        [ai, human].forEach( function (player) {
+            win.forEach( function (solution) {
+                var check = 0;
+                solution.forEach( function (pos) {
+                    if (board[parseInt(pos / 3)][pos % 3] === player) {
+                        check++;
+                    }
+                });
+                if (check === 3) {
+                    if (player === ai) {
+                        outcome = score_AI;
+                        gameOver = true;
+                        how = solution;
+                        score[score_AI]++;
+                    } else {
+                        outcome = score_HUMAN;
+                        gameOver = true;
+                        how = solution;
+                        score[score_HUMAN]++;
+                    }
+                }
+            });
+        });
+
+        // if no moves left to make it's a draw
+        if (min !== 0 && !gameOver) {
+            hasMoved = true;
+            gameOver = true;
+            outcome = score_TIE;
+            score[score_TIE]++;
+            return;
+        }
+    }
+
+
+
+    function showWin () {
+        
+        console.log( gameOver, outcome, how);
+        how.forEach( function (v) {
+            $('#b-' + v).addClass("semi-display");
+            iJS.animate('b-' + v, "zoom-in") ;
+        });
+    }
+
+
+    function updateScore () {
+        
+        score.forEach( function (count, i) {
+            $('#score-' + i +'>span').text(count);
+            iJS.animate('score-' + i, "pulse") ;
+        });
+        
+        iJS.animate($("#display >dialog")[0], "bounce-in") ;
+        //$("#display >dialog").css("display", "block") ;
+        $('input[name="level"], input[name="weapon"]').attr("disabled", false) ;
+        
+        $("#display >dialog >i").removeClass() ;
+        if (outcome === 0) {
+            $("#display >dialog >i").addClass("fa fa-smile-o") ;
+            $("#info-winner").text("user toe!") ;
+            iJS.animate("info-winner", "rubberband", 2) ;
+            playSound( humanWinSound );
+        }
+        if (outcome === 1) {
+            $("#display >dialog >i").addClass("fa fa-hand-stop-o") ;
+            $("#info-winner").text("null toe!") ;
+            iJS.animate("info-winner", "wobble", 2) ;
+            playSound( nullWinSound );
+        }
+        if (outcome === 2) {
+            $("#display >dialog >i").addClass("fa fa-eye") ;
+            $("#info-winner").text("machine toe!") ;
+            iJS.animate("info-winner", "shake", 2) ;
+            playSound( aiWinSound );
+        }
+        
+        iJS.animate($("#display >dialog >i.fa")[0], "bounce") ;
+
+        iJS.animate('score-' + outcome, "jello") ;
+    }
+
+
+    function control () {
+
+        if (aiPlayer === X_token && moveCounter === 0) {
+            hasMoved = false;
+            if (gameLevel === "easy") 
+                moveAI_Rnd() ;
+            else
+                moveAI_Wiki();
+            checkStatus();
+        }
+
+        $('#display').on('click', '.grid', (function() {
+
+            hasMoved = false;
+
+            if (!hasMoved && !gameOver) {
+                move.x = parseInt($(this).attr('id').split('-')[1] / 3);
+                move.y = $(this).attr('id').split('-')[1] % 3;
+                moveHUMAN(move);
+                checkStatus();
+            }
+
+            if (hasMoved && !gameOver) {
+                hasMoved = false;
+                if (gameLevel === "easy") 
+                    moveAI_Rnd() ;
+                else
+                    moveAI_Wiki();
+                checkStatus();
+            }
+
+            if (hasMoved && gameOver) {
+                showWin();
+                setTimeout( updateScore, 2500) ;
+            }
+        }));
+
+    }
+
+
+
+    $('input[name="weapon"][value="x"]').click(function() {
+        humanPlayer = X_token;
+        aiPlayer = O_token;
+    });
+    $('input[name="weapon"][value="o"]').click(function() {
+        humanPlayer = O_token;
+        aiPlayer = X_token;
+    });
+    
+    $('input[name="level"]').on("change", function() {
+        gameLevel = this.value ;
+        if (this.value === "easy") {
+            playSound( easySound );
+            hardSound.pause() ;
+        }
+        else {
+            playSound( hardSound );
+            easySound.pause() ;
+        }
+    });
+    
+    $('input[name="sound"]').on("change", function() {
+        if (!this.checked) {
+            if (gameLevel === "easy") 
+                easySound.pause() ;
+            else
+                hardSound.pause() ;
+            enableSound = false ;
+        }
+        else {
+            enableSound = true ;
+            if (gameLevel === "easy") 
+                playSound( easySound ) ;
+            else
+                playSound( hardSound ) ;
+        }
+    });
+  
+   $('input[name="theme"]').on("change", function() {
+        if (this.checked)
+            $("body, .i-block, #display >dialog").addClass("dark-theme") ;
+        else 
+            $("body, .i-block, #display >dialog").removeClass("dark-theme") ;
+    });
+
+    $('#display >dialog').click(function() {
+        
+        $('input[name="level"], input[name="weapon"]').attr("disabled", true) ;
+        
+        setNewGame();
+        control();
+        
+        var hideDialog = iJS.animate(this, "bounce-out") ;
+        hideDialog.onfinish = function () {
+         
+            squares.forEach(function(v) {
+                iJS.animate('b-' + v, "flip-in-x") ;
+                $("#b-" + v).mouseover( function() {
+                    iJS.animate(this, "pulse") ;
+                }) ;
+            });
+        };
+        //$(this).css("display", "none") ;
+    });
+    
+    iJS.animate($(".i-block.sb-style")[0], "fade-in-down") ;
+    iJS.animate("footer", "fade-in-up") ;
+    iJS.animate("display", "fade-in") ;
+    iJS.animate("with-love", "zoom-in", -1) ;
+    playSound( easySound );
+  
+});
+
+    				
+    				
+    				
+    </script>
+
+  </body>
+
+</html>
