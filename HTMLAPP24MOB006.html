@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <title>khalid |abou jaafer</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="style.css">
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+ </head>
+ <body>
+ <span id="logo">اختبار في الرياضيات</span>
+ <div class="titlebar">
+ <div id="count">
+ <!--عداد الاسئلة الصحيحة والخاطئة-->
+  <span id="total">0</span>🤔
+ </div>
+ <div id="count">
+ <span id="correct">0</span>✅
+ </div>
+ <div id="count">
+ <span id="wrong">0</span>❌
+ </div>
+ </div>
+ <!--محور الخيار-->
+ <div id="diff">
+ <h2>حدد واحدة</h2>
+ <button onclick="level(1)">سهل جذا</button><br />
+ <button onclick="level(2)">سهل</button><br />
+ <button onclick="level(3)">متوسط</button><br />
+ <button onclick="level(4)">صعب</button><br />
+ <button onclick="level(5)">صعب جدا</button>
+ <div style="height:20px"></div>
+ <button style="height: 40px;width:220px" id="mode">الوضع السريع مقفل</button><button style="width:40px;height:40px" id="ex">?</button>
+ </div>
+ <div id="quizbody">
+ <div style="height:10px"></div>
+ <div id='serial'><span>. سؤال</span><span id='no'>1</span></div>
+ <p id="question"></p>
+ <center><div id="timer">
+ <div id="bar"></div>
+ </div></center>
+ <br />
+ <!---حقل الادخال -->
+ <input id="answer" readonly>
+ <!--زر تراجع عن كتابة رقم اخير-->
+ <button id="del" style="width:45px;padding:5px;">←</button>
+ <br />
+ <!---زر الارسال--->
+ <button id="donebtn" onclick="check()">موافق</button>
+<!--- محورلوحة مفاتيح الارقام-->
+ <div id="nums">  
+ <button onclick="ins(1)">1</button>
+ <button onclick="ins(2)">2</button>
+ <button onclick="ins(3)">3</button>
+ <button onclick="ins(4)">4</button>
+ <br />
+ <button onclick="ins(5)">5</button>
+ <button onclick="ins(6)">6</button>
+ <button onclick="ins(7)">7</button>
+ <button onclick="ins(😎">8</button>
+ <br />
+ <button onclick="ins(9)">9</button>
+ <button onclick="ins(0)">0</button>
+ <button onclick="ins('-')">-</button>
+ <button onclick="ins('.')">.</button>
+ </div>
+ <br />
+ <!---زر اعادة التعيين--->
+ <button id="res">اعادة</button>
+ </div>
+ <footer>
+ <a href="https://play.google.com/store/apps/details?id=com.sfo.html.app24mob">🏆اضغط هنا و استفد اكثر معنا🎖</a>
+ </footer>
+ <!-----==========
+ css👇
+ ==============---->
+ <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins...');
+body {
+ font-family: 'Poppins', sans-serif;
+ text-align: center;
+ background-image: linear-gradient(125deg, #667eea 0%, #764ba2 100%);
+ color:white;
+}
+#question {
+ font-size: 40px;
+ font-weight: bold;
+}
+button, input {
+ font-family: 'Poppins', sans-serif;
+ font-weight: bold;
+}
+input {
+ height: 42px;
+ font-size: 30px;
+ width: 150px;
+ text-align: center;
+ color: rgba(13,120,207,1);
+ border: 2px solid white;
+ margin: 8px;
+ border-radius: 10px;
+}
+#quizbody button {
+ width: 100px;
+ height: 50px;
+ margin: 8px;
+ font-size: 22px;
+ background-color: transparent;
+ color: white;
+ font-weight: bold;
+ border: 2px solid white;
+ border-radius: 15px;
+}
+#serial {
+ font-size: 22px;
+ font-weight: bold;
+}
+#diff button {
+ width: 180px;
+ height: 40px;
+ margin: 8px;
+ font-size: 21px;
+ background-color: transparent;
+ color: white;
+ font-weight: bolder;
+ border: 2px solid white;
+ border-radius: 10px;
+}
+#result {
+ font-size: 25px;
+ font-weight: bold;
+}
+.titlebar {
+ margin: 10px;
+}
+#count {
+ padding: 2px;
+ background-color: white;
+ margin: 2px;
+ color: rgba(13,120,207,1);
+ border-radius: 10px;
+ width: 65px;
+ display: inline-block;
+ height: 35px;
+ text-align:right;
+ padding-bottom: 5px;
+ padding-left: 5px;
+ background-color: #dbdbdb;
+ font-weight: bold;
+}
+#count span {
+ font-size: 27px;
+ font-weight: bold;
+}
+#logo {
+ font-size: 30px;
+ font-weight: bold;
+}
+#nums button {
+ height: 44px;
+ width: 44px;
+ font-size: 23px;
+}
+#timer, #bar {
+ height: 10px;
+ width: 220px;
+ border-radius:30px;
+}
+#timer {
+ background-color: transparent;
+ border: 1px solid #00ff00;
+}
+#bar {
+ background-color: #00ff00;
+ position: relative;
+ float: left;
+}
+input:focus, button:focus {
+ outline: 0;
+ outline-color: transparent;
+ outline-style: none;
+}
+footer{
+ background-color: #464646;
+   padding:3px;
+}
+footer a{
+ color:#fff;
+ font-size: 14px;
+ text-decoration: none;
+ font-weight: bold;
+}
+</style>
+ <!-----==========
+ javascript👇
+ ==============---->
+<script>
+var count=1, total=0, correct=0, wrong=0, lim=0;
+var ans = "", question ="", input="", width= 220, t = '', n1, n2, n3, r1, r2, mode=0;
+var opr = [];
+//اخفاء الاسئلة عند بداية التشغيل
+$(document).ready(function() {
+ $("#quizbody").hide();
+});
+//خيارات التحديد 
+function level(lvl) {
+ if (lvl<5) {
+ opr = ["+", "-", "*"]; 
+ if (lvl==1)
+ lim = 5;
+ else if (lvl==2)
+ lim = 10;
+ else if (lvl==3)
+ lim = 15;
+ else if (lvl==4)
+ lim = 30; 
+ }
+ else if (lvl==5) {
+ lim = 50;
+ opr = ["+", "-", "*", "*"];
+ }
+ $("#diff").hide();
+ $("#quizbody").show();
+ if (mode==1) {
+ $("#donebtn").hide();
+ }
+ else {
+ $("#donebtn").show();
+ }
+ quiz();
+}
+// توليد اسئلةعشوائيا
+function quiz() {
+ var len = opr.length; 
+ n1 = Math.floor(Math.random() * lim);
+ n2 = Math.floor(Math.random() * lim);
+ n3 = Math.floor(Math.random() * lim); 
+ r1 = opr[Math.floor(Math.random()*len)];
+ r2 = opr[Math.floor(Math.random()*len)]; 
+ question = n1+r1+n2+r2+n3;
+ ans = eval(question);
+ $("#question").html(question+" = ?");
+ $("#o"+(Math.floor(Math.random() * 4)+1)).html(ans);
+ t = setInterval(timeCheck, 120);
+}
+//فحص الجواب
+function check() {
+ var input = $("#answer").val();
+ //اذا كان الجواب صحيح
+ if(input == ans) {
+ Swal.fire({
+   icon: 'success',
+   title: '🏆',
+   text: ans + ' صحيح',
+   showConfirmButton: false,
+   timer: 1500
+ });
+ correct++;
+ $("#correct").html(correct);
+ }
+ //اذ ام يكن الجواب صحيح
+ else {
+ Swal.fire({
+   icon: 'error',
+   title: '😩',
+   text: 'الجواب هو '+ans,
+   showConfirmButton: false,
+   timer: 1500
+ });
+ wrong++;
+ $("#wrong").html(wrong);
+ } 
+ $("#answer").val('');
+ count++;
+ total++;
+ $("#no").html(count);
+ $("#total").html(total);
+ clearInterval(t);
+ width = 220;
+ bar.style.width = '200px';
+ quiz();
+}
+//ادخال الارقام
+function ins(num) {
+ var chk = $("#answer").val().includes(".");
+ if ($("#answer").val() != '' && num == '-' || num == "." && chk)
+ {
+ }
+ else {
+   $("#answer").val($("#answer").val() + num);
+   if (mode==1) {
+   if ($("#answer").val() ==ans)
+   check();
+   }
+ }   
+}
+//Timer
+function timeCheck() {
+ var bar = document.getElementById("bar");
+//اذا  رجع مؤشر الوقت الى ادني اليسار  تطلع رسال انتهى الوقت وعرض النتيجة
+ if(width == 0) {
+ clearInterval(t);
+ Swal.fire({
+   icon: 'warning',
+   title: 'انتهى الوقت',
+   text: 'الجواب الصحيح هو '+ans,
+   showConfirmButton: false,
+   timer: 2000 //الوقت المتاح هو الفين ميليثانية
+ });
+ wrong++;
+ $("#wrong").html(wrong);
+ quiz();
+ width = 220;
+ bar.style.width = '200px';
+ }
+ else {
+ width--;
+ bar.style.width = width+'px';
+ }
+}
+//وظيفة اخرى  
+$(function() {
+   //تعديل الوضع
+ $("#mode").click(function() {
+ if (mode==0) {
+ $(this).html("Quick Mode (ON)");
+ mode=1;
+ }
+ else {
+ $(this).html("Quick Mode (OFF)");
+ mode=0;
+ }
+ });
+ //اعادة تعيين  العملية
+ $("#res").click(function() {
+ $("#diff").show();
+ $("#quizbody").hide();
+ count=1, total=0, correct=0, wrong=0, lim=0;
+ $("#correct").html(correct);
+ $("#wrong").html(wrong);
+ $("#total").html(total);
+ input.value = "";
+ clearInterval(t);
+ width = 220;
+ bar.style.width = '200px';
+ });
+ //زر حدف الكتابة الاخيرة عند التكرار 
+ $("#del").click(function() {
+ var txt = $("#answer").val();
+ //رراجع عن كتابة رقم واحد
+ txt = txt.slice(0, -1);
+ $("#answer").val(txt);
+ });
+   //عرض محور  الوضع 
+ $("#ex").click(function() {
+ Swal.fire({
+   icon: 'info',
+   title: 'الوضع السريع',
+   text: 'عند تشغيل "الوضع السريع، سيكتشف النظام تلقائيًا الإجابة الصحيحة',
+   showConfirmButton: true,
+ });
+ });
+});
+</script>
+ </body>
+ <script src="script.js"></script>
+</html>

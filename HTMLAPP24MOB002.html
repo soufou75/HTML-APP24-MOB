@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+				<title>Math Game</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+</head>
+<body>
+				 <div id="container">
+      <div id="score">
+        النتيجة: <span id="score-value">0</span>
+      </div>
+      <div id="correct">
+        أحسنت
+      </div>
+      <div id="wrong">
+        أعد المحاولة
+      </div>
+      <div id="question">
+        
+      </div>
+      <div id="instruction">
+        اختر الاجابة الصحيحة
+      </div>
+      <div id="choices">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+      </div>
+      <div id="start-reset">
+        ابدء اللعب
+      </div>
+      <div id="time-remaining">
+        الوقت المتبقي: <span id="time-remaining-value">60</span> ثانية
+      </div>
+      <div id="game-over">
+        
+      </div>
+    </div>
+    
+    <style>
+    				
+    				
+    				html {
+  height: 100%;
+  background: -webkit-radial-gradient(circle, #fff, #ccc);
+  background: -moz-radial-gradient(circle, #fff, #ccc);
+  background: -o-radial-gradient(circle, #fff, #ccc);
+  background: -ms-radial-gradient(circle, #fff, #ccc);
+  background: radial-gradient(circle, #fff, #ccc);
+}
+
+#container {
+  height: 425px;
+  width: 450px;
+  background-color: #9DD2EA;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 110px;
+  -webkit-box-shadow: 0px 4px 20px 0px #009de4;
+  -moz-box-shadow: 0px 4px 20px 0px #009de4;
+  -ms-box-shadow: 0px 4px 20px 0px #009de4;
+  box-shadow: 0px 4px 20px 10px #009de4;
+  position: relative;
+}
+
+#score {
+  background-color: #F1FF92;
+  color: #888E5F;
+  padding: 11px;
+  position: absolute;
+  left: 500px;
+  -webkit-box-shadow: 0px 4px 20px 0px #9da853;
+  -moz-box-shadow: 0px 4px 20px 0px #9da853;
+  -ms-box-shadow: 0px 4px 20px 0px #9da853;
+  box-shadow: 0px 4px 20px 0px #9da853;
+}
+
+#correct {
+  position: absolute;
+  left: 260px;
+  background-color: #42e252;
+  color: #fff;
+  padding: 11px;
+  display: none;
+}
+
+#wrong {
+  position: absolute;
+  left: 250px;
+  background-color: #de481a;
+  color: #fff;
+  padding: 11px;
+  display: none;
+}
+
+#question {
+  width: 350px;
+  height: 150px;
+  margin: 50px auto 10px auto;
+  line-height: 150px;
+  background-color: #9DA0eA;
+  -webkit-box-shadow: 0px 4px 20px 0px #535aa8;
+  -moz-box-shadow: 0px 4px 20px 0px #535aa8;
+  -ms-box-shadow: 0px 4px 20px 0px #535aa8;
+  box-shadow: 0px 4px 20px 0px #535aa8;
+  font-size: 7rem;
+  text-align: center;
+  font-family: 'Bubblegum Sans', cursive, sans-serif;
+  color: #000;
+}
+
+#instruction {
+  width: 350px;
+  height: 50px;
+  background-color: #B481D9;
+  margin: 15px auto;
+  text-align: center;
+  line-height: 45px;
+  -webkit-box-shadow: 0px 4px 20px 0px #8153a8;
+  -moz-box-shadow: 0px 4px 20px 0px #8153a8;
+  -ms-box-shadow: 0px 4px 20px 0px #8153a8;
+  box-shadow: 0px 4px 20px 0px #8153a8;
+}
+
+#choices {
+  width: 450px;
+  height: 100px;
+  margin: 5px auto;
+}
+
+.box {
+  width: 85px;
+  height: 85px;
+  background-color: #fff;
+  float: left;
+  margin-right: 36px;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -ms-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  text-align: center;
+  line-height: 80px;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.box:hover, #start-reset:hover {
+  background-color: #9C89F6;
+  color: #fff;
+  -webkit-box-shadow: 0px 4px 20px 0px #6B54D3;
+  -moz-box-shadow: 0px 4px 20px 0px #6B54D3;
+  -ms-box-shadow: 0px 4px 20px 0px #6B54D3;
+  box-shadow: 0px 4px 20px 0px #6B54D3;
+}
+
+.box:active, #start-reset:active {
+  -webkit-box-shadow: 0px 0px #6B54D3;
+  -moz-box-shadow: 0px 0px #6B54D3;
+  -ms-box-shadow: 0px 0px #6B54D3;
+  box-shadow: 0px 0px #6B54D3;
+  top: 4px;
+}
+
+
+#box4 {
+  margin-right: 0;
+}
+
+#start-reset {
+  width: 78px;
+  padding: 10px;
+  background-color: rgba(255,255,255, 0.5);
+  margin: 10px  auto 0 auto;
+  border-radius: 3px;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -ms-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  text-align: center;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#time-remaining {
+  width: 152px;
+  padding: 10px;
+  position: absolute;
+  top: 411px;
+  left: 400px;
+  background-color: rgba(181, 235, 36, 0.8);
+  border-radius: 2px;
+  -webkit-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -moz-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  -ms-box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  box-shadow: 0px 4px 20px 0px rgba(0,0,0,.2);
+  display: none;
+}
+
+#game-over {
+  height: 200px;
+  width: 500px;
+  background: linear-gradient(#F3CA6B, #F3706C);
+  color: #fff;
+  font-size: 2.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  position: absolute;
+  top: 100px;
+  left: 45px;
+  z-index: 2;
+  display: none;
+}
+
+    				
+    				
+    </style>
+    
+    
+    
+    <script>
+    				
+    				
+    				var playing = false;
+var score;
+var action;
+var correctAnswer;
+
+//if we click on the start/reset button
+document.getElementById("start-reset").onclick = function() {
+   //if we are playing
+   if(playing === true){
+     //reload page
+     location.reload();
+   } else {
+    
+    //if we are not playing
+    playing = true;
+    //set score to 0
+    score = 0;
+    document.getElementById("score-value").innerHTML = score;
+    //show countdown box
+    show("time-remaining");
+    //hide game over box
+    hide("game-over");
+    //reduce time 
+    countdownFrom(60);
+    //change button text to reset
+    document.getElementById("start-reset").innerHTML ="ابدء من جديد";
+    //generate new Q&A
+    generateQA();
+   }
+   
+  
+}
+ 
+
+//if we click on an answer box
+for (var i = 1; i < 5; i++) {
+  document.getElementById("box" + i).onclick = function() {
+    //if we are playing
+    if (playing === true) {
+      //correct?
+      if (this.innerHTML == correctAnswer){
+        //yes
+        //increase score 
+        score++;
+        document.getElementById("score-value").innerHTML = score;
+        //show the correct box for 1 sec
+        hide("wrong");
+        show("correct");
+        setTimeout(function(){
+          hide("correct");
+        }, 1000);
+          //generate new Q&A
+          generateQA();
+      } else {
+        //no
+          //show try again for 1 sec
+          hide("correct");
+          show("wrong");
+          setTimeout(function(){
+            hide("wrong");
+          }, 1000);
+      }
+        
+    }
+      
+  }
+}
+  
+
+
+//Function
+//start countdown
+var countdownFrom = function(num) {
+  document.getElementById("time-remaining-value").innerHTML = num;
+  action = setInterval(function() {
+   //yes->continue
+  num -= 1;
+  document.getElementById("time-remaining-value").innerHTML = num;
+  if (num === 0) {
+    //no-> game over
+    stopCountdown();
+    show("game-over");
+    document.getElementById("game-over").innerHTML = "<p>game over</p><p>Your score is " + score + "</p>";
+    hide("time-remaining");
+    hide("correct");
+    hide("wrong");
+    document.getElementById("start-reset").innerHTML = "ابدء اللعب";
+    playing = false;
+ }
+  }, 1000)
+}
+
+//stop countdown
+var stopCountdown = function() {
+  clearInterval(action);
+}
+
+//hide an element
+var hide = function(id){
+  document.getElementById(id).style.display = "none";
+}
+
+//show an element
+var show = function(id) {
+  document.getElementById(id).style.display = "block";
+}
+
+//generate a question and answer
+var generateQA = function() {
+  var x = Math.round(Math.random()*9) + 1;
+  var y = Math.round(Math.random()*9) + 1;
+  correctAnswer = x*y;
+  var correctPosition = Math.round(Math.random()*3) + 1;
+  document.getElementById("question").innerHTML = x + "x" + y;
+  document.getElementById("box" + correctPosition).innerHTML = correctAnswer;
+  var answers = [correctAnswer];
+  for (var i = 1; i < 5; i++){
+    if(i !== correctPosition){
+      var wrongAnswer;
+      do{
+        wrongAnswer = (Math.round(Math.random()*9) + 1) * (Math.round(Math.random()*9) + 1);
+      }while(answers.indexOf(wrongAnswer) > -1) {
+        document.getElementById("box" + i).innerHTML = wrongAnswer;
+        answers.push(wrongAnswer);
+      }
+    }
+  }
+}
+
+    				
+    				
+    </script>
+    
+    
+</body>
+</html>
