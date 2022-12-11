@@ -1,0 +1,1107 @@
+<!DOCTYPE html>	
+<html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.topnav {
+  overflow: hidden;
+  background-color: #;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {
+  float: right;
+  color: white;
+  padding: 14px 9px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.active {
+  background-color: #;
+  color: ;
+}
+</style>
+</head>
+<body>
+
+
+
+    
+    
+<style>
+body {
+  font-family: Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.openBtn:hover {
+  background: #bbb;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text] {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay input[type=text]:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+</style>
+</head>
+<body>
+
+
+
+<script>
+function openSearch() {
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+    
+    
+    
+    
+    
+    
+    <style>/* latin-ext */
+            @font-face {font-family: 'Righteous'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/righteous/v9/1cXxaUPXBpj2rGoU7C9WhnGFucE.woff2) format('woff2'); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; } /* latin */
+            @font-face {font-family: 'Righteous'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/righteous/v9/1cXxaUPXBpj2rGoU7C9WiHGF.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }@font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 500; src: local('Tajawal Medium'), local('Tajawal-Medium'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l8KiHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; } @font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 500; src: local('Tajawal Medium'), local('Tajawal-Medium'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l8KiHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; } @font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 800; src: local('Tajawal ExtraBold'), local('Tajawal-ExtraBold'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l5anHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; }@font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 800; src: local('Tajawal ExtraBold'), local('Tajawal-ExtraBold'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjLj9ytf.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjnj9ytf.woff2) format('woff2'); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjfj9w.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }</style>
+
+<style>
+
+index:-1;right:0;width:5px;height:5px;background:#ffffff1c;transform-origin:center;border-radius:50%;transform:scale(0);transition:0s all ease}.Hoverable:hover:after{transform:scale(200);opacity:0;transition:1s all ease}.advanced-search>label>i{line-height:0;vertical-align:middle;font-size:26px;color:#29b0ef;margin-left:10px}.advanced-search .form-ui .select-menu .dropdown-list li.active{background:#5260bd}.copyrights-me img{width:100px}footer.tornado-header>.container{min-height:unset;padding:15px 0;display:block}@media only screen and (max-width:900px){.advanced-search{min-width:100%;z-index:999;margin-bottom:15px}.Tabs{float:none;min-width:100%;overflow:auto}.Tabs>li{padding:12px 20px 14px;min-width:120px}}body:after{content:" ";position:fixed;width:100%;height:100%;top:0;bottom:0;left:0;right:0;background-image:url(https://i.imgur.com/3iguGiX.jpeg);background-position:center;background-size:cover;z-index:-17;opacity:.5}a.click-all small{color:#8bdaff}ul.SingleContentTerms{list-style:none;display:flex;margin:0 -10px 12px;flex-wrap:wrap;background:#1a1a39;padding:20px 30px 0 0;border-radius:10px}ul.SingleContentTerms>
+
+</style>
+
+         
+ 
+ 
+
+
+
+</div>
+</div>
+
+<div>
+</div></div></div>
+
+    
+    
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Page Title</title>
+	   <script src="https://unpkg.com/scrollreveal"></script>
+	   <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet'/>
+		 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+  <link href="https://cdn.bootcss.com/font-awesome/5.5.0/css/all.css" rel="stylesheet"> 
+  <link href="https://cdn.bootcss.com/font-awesome/5.3.0/css/all.css" rel="stylesheet"> 
+	   <link href="https://fonts.googleapis.com/css?family=Baloo+2|Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<div class="container">
+	<div class="header">
+	<div class="hide"></div>
+
+
+
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+ 
+
+
+</div>
+
+<!DOCTYPE html>
+<center>
+<html>
+<head>
+	<title>JavaScript image slider</title>
+</head>
+<body>
+
+	
+	<div class = "slider">
+		
+<div class ="slide" id = "slide1"></div>
+		
+
+	
+	</div>
+	
+	
+</body>
+</html>
+
+ </center>
+ 
+ 	
+
+ 
+<script>
+
+
+
+
+
+
+
+let autoSlide;
+window.onload = function(){
+autoSlide= setInterval(function(){
+	thisImage(1);
+},4000);
+
+
+thisImage(0);
+};
+
+var currentImage=0;
+
+
+function thisImage(val){
+
+clearInterval(autoSlide);
+
+
+
+currentImage+=val;
+
+if(currentImage > document.getElementsByClassName("slide").length - 1 && val == "1") currentImage=0;
+
+
+if(currentImage < 0 && val == "-1") currentImage=document.getElementsByClassName("slide").length - 1;
+
+
+for(leftImg = 0; leftImg <= currentImage; leftImg++){
+
+
+	document.getElementsByClassName("slide")[leftImg].style.left="-100vw";
+	document.getElementsByClassName("slide")[leftImg].style.transform = "scale(0)";
+}
+
+
+for(rightImg = currentImage+1; rightImg < document.getElementsByClassName("slide").length; rightImg++){
+	
+	
+	document.getElementsByClassName("slide")[rightImg].style.left="100vw";
+	document.getElementsByClassName("slide")[rightImg].style.transform = "scale(0)";
+}
+
+document.getElementsByClassName("slide")[currentImage].style.left="0";
+document.getElementsByClassName("slide")[currentImage].style.transform = "scale(1)";
+
+
+autoSlide= setInterval(function(){
+	thisImage(1);
+},4000);
+}
+
+	setTimeout(function() {
+	  document.getElementById('imageID').style.display='none'
+	}, 3*1000);
+
+
+</script>
+
+
+
+
+<style type="text/css">
+ 
+
+
+
+.slider {
+width: 98vw; height: 43vh;
+overflow:hidden;
+position:relative;
+margin:1%;
+top:3.5vh;
+left:0;
+}
+
+
+.slide {
+width: 100%; height: 100%;
+transition:left 0.75s, transform 0.75s;
+position:absolute;
+left:0; top:0;
+transition-timing-function:ease-out;
+border-radius:2vmin;
+text-align:center;
+color: black;
+font-weight:bold;
+font-style:italic;
+text-shadow:-1px -1px 1px black, -1px 1px 1px black, 1px -1px 1px black, 1px 1px 1px black;
+}
+
+#slide1{
+background:url("https://i.imgur.com/DTpiske.jpeg");
+background-size:cover;
+background-position:center;
+}
+
+/*Buttons*/
+.prev, .next {
+cursor: pointer;
+position: absolute;
+top: 23%;
+width: auto;
+margin-top: -22px;
+padding: 16px;
+color: white;
+font-weight: bold;
+font-size: 18px;
+transition: 0.6s ease;
+border-radius: 0 3px 3px 0;
+user-select: none;
+z-index:2;
+}
+
+.next {
+right: 0;
+border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+background-color: rgba(0,0,0,0.8);
+}
+</style>
+
+
+
+
+
+<img style="border-radius: 20px 5px;"  src="https://1.bp.blogspot.com/-tgvGlDqVxyM/X69lBaINE2I/AAAAAAAAAAg/CAuNxDKqjpY-xbJdTgRCFMNcm5eITrdxACLcBGAsYHQ/s1220/20201114_010240.png" width="25" height="90" ></a>
+
+<div>
+
+
+
+
+
+
+
+<style type="text/css">
+ 
+	}
+	button{
+		background-color: white;
+		color: black;
+		border: none;
+		border-radius: 5px;
+		size: 20px;
+		width: 70px;
+		padding: 10px;
+	}
+	div .jordan{
+	  overflow-x: scroll;
+	  overflow-y: hidden;
+	  white-space: nowrap;}
+	}
+  
+</style>
+</head>
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+<div>
+
+
+
+
+</script>
+<style type="text/css">
+ 
+	}
+	button{
+		background-color: white;
+		color: black;
+		border: none;
+		border-radius: 5px;
+		size: 20px;
+		width: 70px;
+		padding: 10px;
+	}
+	div .jordan2{
+	  overflow-x: scroll;
+	  overflow-y: hidden;
+	  white-space: nowrap;}
+	}
+  
+</style>
+</head>
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+
+
+
+ 
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="go:live" class="active">للمزيد من القنوات اضغط هنا </a>
+  <div id="myLinks">
+  </div>
+ 
+  </a>
+</div>
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+	 
+
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/iGFKd1o.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/guTsBrj.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/FAyrqJi.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/FEqaKHT.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/M9JKbo9.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/9VOwvNX.png" width="90px" height="100px"></a>
+
+<a href="go:Be" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.imgur.com/jjW7LCs.png" width="90px" height="100px"></a>
+
+</div>
+
+
+
+
+
+
+
+<div>
+
+ 
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active"> افلام اجنبي</a>
+  <div id="myLinks">
+  </div>
+  
+   
+  </a>
+</div>   
+</script>
+
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+		 
+
+
+<a href="go:SP" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg" width="100px" height="160px"></a>
+
+
+
+
+<a href="https://fly.stream.fushaar.com/movie/40263/40263.mp4/playlist.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://m.media-amazon.com/images/M/MV5BYmFjODRjMjItYjFlMi00Mzk5LWIwNjMtOWM1YzYxZWFjMTBiXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" width="100px" height="160px"></a>
+
+
+
+<a href="https://fly.stream.fushaar.com/movie/40358/40358.mp4/playlist.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvIza-3hXnb2yUZWA6LA1-xAUPmf53gdruLmUprq3dBXs2hgn4" width="100px" height="160px"></a> 
+   
+
+
+<a href="https://fly.stream.fushaar.com/movie/40348/40348.mp4/playlist.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://m.media-amazon.com/images/M/MV5BYjE1NTA2ZDEtYjYxOC00MDM3LWJkMDktMDU4OGZiZWVhMDg3XkEyXkFqcGdeQXVyMTMwMDA5ODU3._V1_.jpg" width="100px" height="160px"></a>
+
+
+
+
+<a href="https://fly.stream.fushaar.com/movie/40513/40513-480p.mp4/playlist.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://tuktukcinema.net/wp-content/uploads/2021/12/MV5BNjZjNDE1NTYtYTgwZS00M2VmLWEyODktM2FlNjhiYTk3OGU2XkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UX1000_-.jpg_UY1200-.jpg" width="100px" height="160px"></a>
+
+
+
+<a href="https://fly.stream.fushaar.com/movie/40367/40367-480p.mp4/playlist.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://media.fushaar.com/media/2021/12/MV5BZjE1ZmMyNzItYTJmZS00Yjc3LTg1MGUtYzdhNmJmNTljMGMyXkEyXkFqcGdeQXVyODM5ODA1Nzc@._V1_.jpg" width="100px" height="160px"></a> 
+   
+
+
+
+
+
+
+<a href="go:plus2" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://i.imgur.com/W7f20a9.jpg" width="100px" height="160px"></a>
+   
+   
+   
+
+
+
+</div>
+
+
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active"> مسلسلات اجنبي </a>
+  <div id="myLinks">
+  </div>
+  
+  </a>
+</div>   
+</script>
+
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+		 
+
+
+<a href="go:SQ" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTbllVWxmzkxH1PCsHM9OCm_FnuP9KmQtAB3oajQGxgHJTBV-o8" width="100px" height="160px"></a>
+
+
+
+
+<a href="go:LA" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYvZvcsCi4tETVleCiv1jO5_Q8PVVzZWRXQ&s" width="100px" height="160px"></a>
+
+
+
+<a href="go:SEE" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://i.egycdn.com/pic/WmFwZndlY21IY3Z0TmJtdm1qRWNhbVR2bXp4bWJ2d1A.jpg" width="100px" height="160px"></a> 
+   
+
+
+<a href="go:plus2" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://i.imgur.com/W7f20a9.jpg" width="100px" height="160px"></a>
+   
+   
+   
+
+
+
+</div>
+
+
+<div>
+
+ 
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active"> مسلسلات عربي </a>
+  <div id="myLinks">
+  </div>
+  
+  </a>
+</div>   
+</script>
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+	 
+
+
+<a href="go:ft" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://media.fushaar.com/media/2021/12/MV5BZjE1ZmMyNzItYTJmZS00Yjc3LTg1MGUtYzdhNmJmNTljMGMyXkEyXkFqcGdeQXVyODM5ODA1Nzc@._V1_.jpg" width="100px" height="160px"></a>
+
+
+
+
+<a href="go:shaqa" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://shahed4u.dev/wp-content/uploads/2021/08/_640x_7e19ea81c95499598a980172cc8c980dcc2a181136f3ded1673a18b14c4c2d83-389x550.jpg" width="100px" height="160px"></a>
+
+
+
+<a href="go:salon" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://upload.wikimedia.org/wikipedia/ar/d/d2/%D9%85%D9%84%D8%B5%D9%82_%D9%85%D8%B3%D9%84%D8%B3%D9%84_%D8%B5%D8%A7%D9%84%D9%88%D9%86_%D8%B2%D9%87%D8%B1%D8%A9.jpeg" width="100px" height="160px"></a>
+   
+
+
+<a href="go:ostora" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://www.sayidaty.net/sites/default/files/imce/user951031/4_82.jpg" width="100px" height="160px"></a>
+
+
+
+
+<a href="go:maora" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://upload.wikimedia.org/wikipedia/ar/8/8c/%D9%85%D8%A7_%D9%88%D8%B1%D8%A7%D8%A1_%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D8%A9.jpg" width="100px" height="160px"></a>
+
+
+
+<a href="go:DNA" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://al-ghina.com/wp-content/uploads/2020/12/130972628_3553758011340558_5267101857593008992_o-236x300.jpg" width="100px" height="160px"></a>
+   
+
+
+
+
+
+
+<a href="go:plus3" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://i.imgur.com/Z7XZl8w.jpg" width="100px" height="160px"></a>
+   
+   
+   
+
+
+
+</div>
+
+
+
+<div>
+
+ 
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active">افلام عربي </a>
+  <div id="myLinks">
+  </div>
+ 
+  </a>
+</div>   
+</script>
+
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+		 
+
+
+<a href="go:MSH" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://media.fushaar.com/media/2021/12/MV5BZjE1ZmMyNzItYTJmZS00Yjc3LTg1MGUtYzdhNmJmNTljMGMyXkEyXkFqcGdeQXVyODM5ODA1Nzc@._V1_.jpg" width="110px" height="170px"></a>
+
+
+
+
+<a href="go:ALSH" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://m.media-amazon.com/images/M/MV5BYmFjODRjMjItYjFlMi00Mzk5LWIwNjMtOWM1YzYxZWFjMTBiXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg" width="110px" height="170px"></a>
+
+
+
+<a href="go:MOSA" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://upload.wikimedia.org/wikipedia/ar/d/d2/%D9%85%D9%84%D8%B5%D9%82_%D9%85%D8%B3%D9%84%D8%B3%D9%84_%D8%B5%D8%A7%D9%84%D9%88%D9%86_%D8%B2%D9%87%D8%B1%D8%A9.jpeg" width="110px" height="170px"></a> 
+   
+
+
+<a href="go:MAMA" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://pics.filmaffinity.com/Daisy_Quokka_World_s_Scariest_Animal-571676804-large.jpg" width="110px" height="170px"></a>
+
+
+
+
+<a href="go:DEDO" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://m.media-amazon.com/images/M/MV5BNzUxOGU0NDUtMGMxYy00NDNhLTljYjItZGJhZmIwNDkzMWIxXkEyXkFqcGdeQXVyMTE2MDU0NzAw._V1_FMjpg_UX1000_.jpg" width="110px" height="170px"></a>
+
+
+
+<a href="go:1SEC" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://i.egycdn.com/pic/WmFwZndlY21ITm9jbXZtVGFjdmN2d0thbURMdHc.jpg" width="110px" height="170px"></a> 
+   
+
+
+
+
+
+
+<a href="go:plus4" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://i.imgur.com/W7f20a9.jpg" width="110px" height="170px"></a>
+   
+   
+   
+
+
+
+</div>
+
+
+
+
+<div>
+
+</h2>
+   
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active">افلام انميشن</a>
+  <div id="myLinks">
+  </div>
+ 
+  </a>
+</div>   
+</script>
+
+
+<div>
+<div class="firstfield" >
+  
+   </div>
+ 
+
+
+<div align="center" class="jordan2">
+		 
+
+
+<a href="go:TOM" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://i.egycdn.com/pic/WmFwZndlY21IY3Z0TmJtdm1qRWNhbVR2bXp4bWJ2d1A.jpg" width="110px" height="170px"></a>
+
+
+
+
+<a href="go:DI" > <img class=jordan2  
+<img style="border-radius: 5px ;"src="https://www.faselhd.io/wp-content/uploads/2021/12/MV5BZDYyMjI1OWQtYjhmMS00MmU4LWI1N2UtNzFlZGQ0MDE2ODEwXkEyXkFqcGdeQXVyODkzNTgxMDg@._V1_-400x600.jpg" width="110px" height="170px"></a>
+
+
+
+<a href="go:RU" > <img class=jordan2 
+<img style="border-radius: 5px ;"src="https://upload.wikimedia.org/wikipedia/en/5/5d/Rumble_2021_film_poster.png" width="110px" height="170px"></a> 
+   
+
+
+<a href="go:DA" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://pics.filmaffinity.com/Daisy_Quokka_World_s_Scariest_Animal-571676804-large.jpg" width="110px" height="170px"></a>
+
+
+
+
+
+<a href="go:plus4" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://i.imgur.com/W7f20a9.jpg" width="110px" height="170px"></a>
+   
+   
+   
+
+
+
+</div>
+
+
+
+</div>
+
+<style type="text/css">
+body {
+margin: auto;
+width:auto;
+height:auto;
+padding: 10px 0;
+background-color:#111217;
+}
+
+.container{
+width:100%;
+height:100px;
+}
+.nav {
+position: fixed;
+bottom: 0;
+width: 100%;
+height: 10%;
+box-shadow: 0 0 2px #131419;
+background-color: black;
+display: flex;
+overflow-x: auto;
+}
+
+.nav__link {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+flex-grow: 1;
+min-width: 50px;
+overflow: hidden;
+white-space: nowrap;
+font-family: sans-serif;
+font-size: 13px;
+color: #cccccc;
+text-decoration: none;
+-webkit-tap-highlight-color: transparent;
+transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+background-color: #121212;
+}
+
+.nav__link--active {
+color: #fff;
+}
+
+.nav__icon {
+font-size: 32px;
+height: 50px;
+
+}
+
+
+  #imageID{
+		  max-width:100%;
+		  height: 100%;
+		  z-index: 9999;
+		  position:fixed; 
+		  top:0; 
+		  left:0;
+	  }
+
+
+
+<style> h2{ color: #000; font-family: Arial, Helvetica, sans-serif; border-radius: 5px; margin:20px; } 
+
+div .jordan2{ margin:5px; border-radius: 20px; 
+
+display:adsolute;
+position:responsive; 
+
+
+
+{
+</style>
+
+<style> h2{ color: #000; font-family: Arial, Helvetica, sans-serif; border-radius: 5px; margin:20px; } 
+
+div .jordan{ margin:5px; border-radius: 20px; 
+
+display:adsolute;
+position:responsive; 
+
+
+
+{
+</style>
+
+</div><footer class="clearfix"></a></div></footer>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    /* Toggle between adding and removing the "active" class,
+    to highlight the button that controls the panel */
+    this.classList.toggle("active");
+
+    /* Toggle between hiding and showing the active panel */
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+</script>
+    
+    
+    
+    
+    
+    
+    
+    <style>
+  .thenumber{display:inline-block;width:50%;font-size:2.8em;font-family:bont-bold,sans-serif;font-weight:700;text-align:center;color:#494949}#container  a li{width:17%;float:right;margin:1.3%}.accordion{color:#020202;cursor:pointer;padding:18px;border-radius:0;width:100%;text-align:right;border:none;outline:none;font-family:amazon;font-size:1.2em;transition:.4s;margin:15px}.active,.accordion:hover{}.active{background-color:}.panel{;display:none;overflow:hidden;width:100%;margin-top:-15px;margin-right:15px}.panel ul{list-style:none}.panel ul li{display:inline-block;width:18%;margin:.8%;padding:15px;text-align:center;background:#e8eef3;color:#516473}
+
+</style>
+
+
+
+
+
+
+
+
+
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 3 seconds
+}
+</script>  
+    
+    
+    
+    
+    
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<scrolltotop class="tag-block show"><i class="fal fa-chevron-up"></i></scrolltotop>
+</script>
+<script type='text/javascript' src='https://www.zimabadk.com/wp-includes/js/jquery/jquery.js' id='jquery-js'></script>
+
+
+
+<link rel='dns-prefetch' href='//pro.fontawesome.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+	<style type="text/css">
+img.wp-smiley,
+img.emoji {
+display: inline !important;
+border: none !important;
+box-shadow: none !important;
+height: 1em !important;
+width: 1em !important;
+margin: 0 .07em !important;
+vertical-align: -0.1em !important;
+background: none !important;
+padding: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<link rel='stylesheet' id='font-awesome-css'  href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css?ver=5.7.2' type='text/css' media='all' />
+</script>
+
+
+
+
+
+
+
+
+
+
+<scrolltotop class="tag-block show"><i class="fal fa-chevron-up"></i></scrolltotop>
+</script>
+<script type='text/javascript' src='https://www.zimabadk.com/wp-includes/js/jquery/jquery.js' id='jquery-js'></script>
+
+
+
+<link rel='dns-prefetch' href='//pro.fontawesome.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+
+	
+<link rel='stylesheet' id='font-awesome-css'  href='https://pro.fontawesome.com/releases/v5.10.0/css/all.css?ver=5.7.2' type='text/css' media='all' />
+</script>
+</body></html>
+
+
+
+</style>
+
+
+
+
+
+</body>
+</html>
+
+
+
+</body></html>
