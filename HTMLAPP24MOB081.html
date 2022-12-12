@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>HTML : APP24/MOB</title>
+    <style>
+         *{
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family:'poppins', sans-serif; 
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height:100vh;
+            background: #1d2122;
+        }
+      
+        #contenor{
+            display:grid;
+            position: relative;
+        }
+        #contenor .photo{
+        grid-column: span 2;
+        text-align: center;
+        color: white;
+        font-size: large;
+        padding: 10px;
+        margin-top: 2px;
+        }
+        #contenor span{
+            display: grid;
+        }
+        #contenor .acc{
+            justify-items: left;
+        }
+        #contenor .del{
+            justify-items: right;
+        }
+        #contenor .do{
+            margin-bottom: 80%;
+        }
+        
+       
+    </style>
+</head>
+<body onload="sound()">
+<form id="contenor">
+  <!----رابط الصورة الظاهرة على صفحة -->
+   <span class="photo"><img src="https://i.ibb.co/sgDJPQy/a-44.png" alt="call" onclick="sound()"></span><!--الصورة الموجودة--->
+     <!----تغير الاسم هنا  -->
+   <span class="photo">توم وجيري</span><!--الاسم الظاهر-->
+   <span class="photo">يتصلون بك</span><!---لا تغيره-->
+   <span id="stopwatch" class="photo do"></span><!--هنا العداد لا تغيره-->
+   
+   <span class="acc" onclick="startTimer();stop();"><img src="https://i.ibb.co/fNcR76C/image.png" alt="accept"></span><!--صورة قبول الاتصال-->
+   <span class="del" onclick="stopTimer()"><img src="https://i.ibb.co/2W8y1RN/image.png" alt="deline"></span><!--صورة رفض الاتصال--->
+</form>
+
+
+<script>
+   const timer = document.getElementById('stopwatch');
+
+var hr = 0;
+var min = 0;
+var sec = 0;
+var stoptime = true;
+
+function startTimer() {
+  if (stoptime == true) {
+        stoptime = false;
+        timerCycle();
+    }
+}
+function stopTimer() {
+  if (stoptime == false) {
+    stoptime = true;
+    timer.innerHTML ="end call";
+  }
+  myAudio2.pause();
+}
+
+function timerCycle() {
+    if (stoptime == false) {
+    sec = parseInt(sec);
+    min = parseInt(min);
+    hr = parseInt(hr);
+
+    sec = sec + 1;
+
+    if (sec == 60) {
+      min = min + 1;
+      sec = 0;
+    }
+    if (min == 60) {
+      hr = hr + 1;
+      min = 0;
+      sec = 0;
+    }
+
+    if (sec < 10 || sec == 0) {
+      sec = '0' + sec;
+    }
+    if (min < 10 || min == 0) {
+      min = '0' + min;
+    }
+    if (hr < 10 || hr == 0) {
+      hr = '0' + hr;
+    }
+
+    timer.innerHTML = hr + ':' + min + ':' + sec;
+
+    setTimeout("timerCycle()", 1000);
+  }
+}
+
+function resetTimer() {
+    timer.innerHTML = '00:00:00';
+}
+var myAudio = new Audio('https://l.top4top.io/m_20981p8yk1.mp3');//صوت الرنين ممكن تغيره من هنا
+var myAudio2 = new Audio('https://e.top4top.io/m_2199fb3u90.mp3');//صوت الشخص الذي يتكلم
+function sound(){
+  
+  myAudio.play();
+}
+function stop(){
+  myAudio.pause();
+myAudio.currentTime = 0;
+myAudio2.play();
+}
+
+
+
+</script>
+</body>
+</html>
