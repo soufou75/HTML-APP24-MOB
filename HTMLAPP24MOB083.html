@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML : APP24/MOB</title>
+    <link rel="stylesheet" href="https://drive.google.com/uc?export=view&id=1hfV3DxKgirNLB2JCdEun8mtwv5hDSF6P">
+</head>
+<body onload="NextQuestion(0)">
+    <main>
+        
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>مبروك !! لقد انهيت المسابقة</h1>
+
+                <div class="grade-details">
+                    <p>الاسئلة : 10</p>
+                    <p>اجابات خاطئة:<span id="wrong-answers"></span></p>
+                    <p>اجابات صحيحة : <span id="right-answers"></span></p>
+                    <p>الدرجة : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">متابعة</button>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>العلامة : <span id="player-score"></span> / 10</h1>
+                <h1> السؤال : <span id="question-number"></span> / 10</h1>
+            </div>
+
+            <div class="box" id="img">
+                
+
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1>
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>رجاءا اختر الاجابة الصحيحة</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">متابعة</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">السؤال التالي</button>
+            </div>
+
+        </div>
+    </main>
+    <script>
+      
+const questions = [
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "كم يوما في الاسبوع؟",
+        optionA: "10 ايام",
+        optionB: "14 يوم",
+        optionC: "5 ايام",
+        optionD: "7 ايام",
+        correctOption: "optionD"
+    },
+
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "من كم لاعب يتكون فيق كرة القدم ؟",
+        optionA: "10 لاعبين",
+        optionB: "11 لاعبين",
+        optionC: "9 لاعبين",
+        optionD: "12 لاعبين",
+        correctOption: "optionB"
+    },
+
+    {
+        Imagem: "<audio src='https://c.top4top.io/m_20544ibud3.mp3' controls></audio>" ,
+        question: "اسمع الصوت واختر ما هو الحيوان ",
+        optionA: "عصفور",
+        optionB: "ذباب",
+        optionC: "نمر",
+        optionD: "حصان",
+        correctOption: "optionD"
+    },
+
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "اي شهر يحوي 30 يوم",
+        optionA: "كانون الثاني",
+        optionB: "كانون الاول",
+        optionC: "حزيران",
+        optionD: "اب",
+        correctOption: "optionC"
+    },
+
+    {
+        Imagem: "<audio src='https://f.top4top.io/m_20540nmsk1.mp3' controls></audio>" ,
+        question: "احزر صوت ماذا تسمع",
+        optionA: "نحل",
+        optionB: "اسد",
+        optionC: "حصان",
+        optionD: "عصافير",
+        correctOption: "optionD"
+    },
+
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "ما هو اطول نهر في العالم؟",
+        optionA: "نهر النيل",
+        optionB: "نهر الفرات",
+        optionC: "نهر الكونغو",
+        optionD: "نهر دجلة",
+        correctOption: "optionA"
+    },
+
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "ما هي احر (احمى) قارة في العالم ؟",
+        optionA: "اسيا",
+        optionB: "استراليا",
+        optionC: "افريقيا",
+        optionD: "اميركا الشمالية",
+        correctOption: "optionC"
+    },
+
+    {
+        Imagem: "<img src='https://b.top4top.io/p_20546f3ly2.jpg' />" ,
+        question: "ما هي اكبر دولة بالعالم؟",
+        optionA: "روسيا",
+        optionB: "كندا",
+        optionC: "افريقيا",
+        optionD: "مصر",
+        correctOption: "optionA"
+    },
+
+    {
+        Imagem: "<audio src='https://a.top4top.io/m_2054e3il21.mp3' controls></audio>" ,
+        question: "ما هو الحيوان الذي تسمعه",
+        optionA: "اسد",
+        optionB: "عصفور",
+        optionC: "حصان",
+        optionD: "كلب",
+        correctOption: "optionD"
+    },
+
+    {
+        Imagem: "<img src='https://a.top4top.io/p_2054oisds1.jpg' />" ,
+        question: "ما هو الشكل الموجود بالصورة ",
+        optionA: "طيارة",
+        optionB: "كرة سلة",
+        optionC: "سيف",
+        optionD: "كرة قدم",
+        correctOption: "optionD"
+    },
+    {
+        Imagem: "<img src='https://alexandriarain.com/wp-content/uploads/2021/03/%D9%83%D9%88%D8%A7%D9%83%D8%A8-%D8%A7%D9%84%D9%85%D8%AC%D9%85%D9%88%D8%B9%D8%A9-%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A%D8%A9-%D8%A8%D8%A7%D9%84%D8%AA%D8%B1%D8%AA%D9%8A%D8%A8-700x445.jpg' />" ,
+        question: "أي من الكواكب الآتية يعتبر أصغر كوكب داخل المجموعة الشمسية؟",
+        optionA: "الزهرة",
+        optionB: "المريخ",
+        optionC: "الأرض",
+        optionD: "بلوتو",
+        correctOption: "optionD"
+    },
+    {
+        Imagem: "<img src='https://www.almrsal.com/wp-content/uploads/2019/05/%D8%A7%D9%86%D9%88%D8%A7%D8%B9-%D8%A7%D9%84%D8%B2%D9%88%D8%A7%D8%AD%D9%81.png' />" ,
+        question: "من هو الحيوان الذي لا يعد من الزواحف من قائمة الحيوانات الآتية؟",
+        optionA: "التمساح",
+        optionB: "السلحفاة",
+        optionC: "السحلية",
+        optionD: "الضفدع",
+        correctOption: "optionD"
+    },
+    {
+        Imagem: "<img src='https://www.arageek.com/wp-content/uploads/2021/04/encyclopedia-%D9%85%D8%A7-%D9%87%D9%8A-%D9%85%D8%B3%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D9%85%D8%AB%D9%84%D8%AB-%D9%85%D8%AA%D8%B3%D8%A7%D9%88%D9%8A-%D8%A7%D9%84%D8%A7%D8%B6%D9%84%D8%A7%D8%B9-%D9%85%D8%B9-%D8%A3%D9%85%D8%AB%D9%84%D8%A9-%D9%85%D8%B4%D8%B1%D9%88%D8%AD%D8%A9.jpg' />" ,
+        question: "ما هي عدد أضلاع المثلث؟",
+        optionA: "واحد",
+        optionB: "أربعة",
+        optionC: "اثنان",
+        optionD: "ثلاثة",
+        correctOption: "optionD"
+    },
+    {
+        Imagem: "<img src='https://a.top4top.io/p_2054oisds1.jpg' />" ,
+        question: "ما الذي يجعل الكائنات متماسكة على وجه الأرض؟",
+        optionA: "الحرارة",
+        optionB: "السرعة",
+        optionC: "القوة",
+        optionD: "الجاذبية",
+        correctOption: "optionD"
+    },
+    {
+        Imagem: "<img src='https://modo3.com/thumbs/fit630x300/150311/1483003968/%D8%B9%D8%A7%D9%84%D9%85_%D8%A7%D9%84%D8%AD%D9%8A%D9%88%D8%A7%D9%86%D8%A7%D8%AA_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9.jpg' />" ,
+        question: "ما هو الكائن البحري الذي يتواجد له ثمان أرجل؟ ",
+        optionA: "حصان البحر",
+        optionB: "السلطعون",
+        optionC: "القرش",
+        optionD: "الأخطبوط",
+        correctOption: "optionD"
+    },
+
+
+]
+
+
+let shuffledQuestions = [] 
+
+function handleQuestions() { 
+   
+    while (shuffledQuestions.length <= 9) {
+        const random = questions[Math.floor(Math.random() * questions.length)]
+        if (!shuffledQuestions.includes(random)) {
+            shuffledQuestions.push(random)
+        }
+    }
+}
+
+
+let questionNumber = 1 
+let playerScore = 0  
+let wrongAttempt = 0 
+let indexNumber = 0 
+
+
+function NextQuestion(index) {
+    handleQuestions()
+    const currentQuestion = shuffledQuestions[index]
+    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("player-score").innerHTML = playerScore
+    document.getElementById("display-question").innerHTML = currentQuestion.question;
+    document.getElementById("img").innerHTML = currentQuestion.Imagem
+    document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
+    document.getElementById("option-two-label").innerHTML = currentQuestion.optionB;
+    document.getElementById("option-three-label").innerHTML = currentQuestion.optionC;
+    document.getElementById("option-four-label").innerHTML = currentQuestion.optionD;
+
+}
+
+
+function checkForAnswer() {
+    const currentQuestion = shuffledQuestions[indexNumber] 
+    const currentQuestionAnswer = currentQuestion.correctOption 
+    const options = document.getElementsByName("option"); 
+    let correctOption = null
+
+    options.forEach((option) => {
+        if (option.value === currentQuestionAnswer) {
+            
+            correctOption = option.labels[0].id
+        }
+    })
+
+    
+    if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
+        document.getElementById('option-modal').style.display = "flex"
+    }
+
+    
+    options.forEach((option) => {
+        if (option.checked === true && option.value === currentQuestionAnswer) {
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            playerScore++ 
+            indexNumber++ 
+            
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+
+        else if (option.checked && option.value !== currentQuestionAnswer) {
+            const wrongLabelId = option.labels[0].id
+            document.getElementById(wrongLabelId).style.backgroundColor = "red"
+            document.getElementById(correctOption).style.backgroundColor = "green"
+            wrongAttempt++ 
+            indexNumber++
+            
+            setTimeout(() => {
+                questionNumber++
+            }, 1000)
+        }
+    })
+}
+
+
+
+
+function handleNextQuestion() {
+    checkForAnswer() 
+    unCheckRadioButtons()
+    
+    setTimeout(() => {
+        if (indexNumber <= 9) {
+
+            NextQuestion(indexNumber)
+        }
+        else {
+            handleEndGame()
+        }
+        resetOptionBackground()
+    }, 1000);
+}
+
+
+function resetOptionBackground() {
+    const options = document.getElementsByName("option");
+    options.forEach((option) => {
+        document.getElementById(option.labels[0].id).style.backgroundColor = ""
+    })
+}
+
+
+function unCheckRadioButtons() {
+    const options = document.getElementsByName("option");
+    for (let i = 0; i < options.length; i++) {
+        options[i].checked = false;
+    }
+}
+
+
+function handleEndGame() {
+    let remark = null
+    let remarkColor = null
+
+    
+    if (playerScore <= 3) {
+        remark = "علامة سيئة , تابع الدراسة"
+        remarkColor = "red"
+    }
+    else if (playerScore >= 4 && playerScore < 7) {
+        remark = "علامة متوسطة , يمكنك ان تتحسن"
+        remarkColor = "orange"
+    }
+    else if (playerScore >= 7) {
+        remark = "ممتاز , تابع دراستك جيدا"
+        remarkColor = "green"
+    }
+    const playerGrade = (playerScore / 10) * 100
+
+    
+    document.getElementById('remarks').innerHTML = remark
+    document.getElementById('remarks').style.color = remarkColor
+    document.getElementById('grade-percentage').innerHTML = playerGrade
+    document.getElementById('wrong-answers').innerHTML = wrongAttempt
+    document.getElementById('right-answers').innerHTML = playerScore
+    document.getElementById('score-modal').style.display = "flex"
+
+}
+
+
+function closeScoreModal() {
+    questionNumber = 1
+    playerScore = 0
+    wrongAttempt = 0
+    indexNumber = 0
+    shuffledQuestions = []
+    NextQuestion(indexNumber)
+    document.getElementById('score-modal').style.display = "none"
+}
+
+
+function closeOptionModal() {
+    document.getElementById('option-modal').style.display = "none"
+}
+    </script>
+</body>
+    
+
+</html>
