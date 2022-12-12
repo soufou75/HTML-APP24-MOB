@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  padding: 25px;
+  background-color: white;
+  color: black;
+  font-size: 25px;
+  background-image: url("");
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+</style>
+</head>
+<body>
+
+<h2>HTML : APP24/MOB</h2>
+<p>اضغط على الزر ليتم التحويل بين الوضع النهاري والوضع الليلي</p>
+
+<button onclick="myFunction()">غير الوضع</button>
+
+
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+
+}
+
+</script>
+
+</body>
+</html>
