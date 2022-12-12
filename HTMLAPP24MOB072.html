@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML : APP24/MOB</title>
+ <style>
+     .a{
+         border: black;
+         border-style: double;
+         border-radius: 10px;
+         background-color: blanchedalmond;
+         width: 60px;
+         float: right;
+         color: black;
+     }
+    
+     p{
+   
+         width: 50%;
+        float:none;
+        padding-right: 30px;
+        margin-right: 90px;
+     }
+     div{
+         background-color: blanchedalmond;
+         
+     }
+ </style>
+</head>
+<body id="body">
+    <center>    <h1>HTML : APP24/MOB </h1> </center><br>
+
+    <div class="a">
+        <input type="radio" name="mode" onclick="modedark()">dark</input><br>
+        <input type="radio" name="mode" onclick="modenight()">night</input><br>
+        <input type="radio" name="mode" onclick="modeday()" checked>day</input><br>
+        <input type="radio" name="mode" onclick="modepink()">pink</input><br>
+        <input type="radio" name="mode" onclick="modered()">red</input>   
+     </div><br>
+     
+     
+     <p>
+    لكل عشاق الخط العربي والتصميم نقدم  خط قناة mbc الفضائيه المميز ، يمكنك معاينه الخط قبل التحميل واسم الخط بعد اضافته في الكمبيوتر داخل مجلد الخطوط سوف يظهر كما في الصوره التاليه في اعلى عند اختياره من خلال برنامج الفوتوشوب     خطوط للدعايه والاعلان واليفط الكبيره الاشهاريه تحميل خطوط عربيه مميزه مع العينات قبل التحميل لعمل تصاميم جرافيك بالفوتوشوب
+
+</p>
+
+
+
+    <script>
+        function modeday(){
+            var body = document.getElementById("body")
+           
+                body.style.backgroundColor ="white";
+                body.style.color ="black";
+        }
+        function modenight(){
+            var body = document.getElementById("body")
+           
+                body.style.backgroundColor ="black";
+                body.style.color ="white";
+                
+        }
+        function modedark(){
+            var body = document.getElementById("body")
+           
+                body.style.backgroundColor ="darkslategrey";
+                body.style.color ="white";
+        }
+        function modered(){
+            var body = document.getElementById("body")
+           
+                body.style.backgroundColor ="red";
+                body.style.color ="black";
+        }
+        function modepink(){
+            var body = document.getElementById("body")
+           
+                body.style.backgroundColor ="pink";
+                body.style.color ="rebeccapurple";
+        }
+    </script>
+</body>
+</html>
