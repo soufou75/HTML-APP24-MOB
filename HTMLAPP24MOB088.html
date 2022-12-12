@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<head><title></title></head>
+<body dir="rtl">
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  
+  #myInput {
+    background-image: url('/css/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #652efb;
+    margin-bottom: 18px;
+  }
+  
+  #myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #myUL li a {
+    border: 1px solid #652efb;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #fbcb2e;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    display: block
+  }
+  
+  #myUL li a:hover:not(.header) {
+    background-color: #eee;
+  }
+</style>
+</head>
+<body>
+
+
+<h2>HTML : APP24/MOB</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="بحث ..." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="" data-value="https://download.tvquran.com/download/selections/121/590dc67a93663.mp3">دعاء طلب الحاجة</a></li>
+  <li><a href="#">دعاء الشتاء </a></li>
+  <li><a href="#">عندما يكون </a></li>
+  <li><a href="#">موسوعة </a></li>
+  <li><a href="https://www.google.com">الارض</a></li>
+  <li><a href="#">الطيبة</a></li>
+</ul>
+
+<script>
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+myUL.onclick = function(e) {
+  e.preventDefault();
+
+  var elm = e.target;
+  var audio = document.getElementById('audio');
+
+  var source = document.getElementById('audioSource');
+  source.src = elm.getAttribute('data-value');
+
+  audio.load(); //call this to just preload the audio without playing
+  audio.play(); //call this to play the song right away
+};
+</script>
+
+</body>
+</html>
