@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+
+  <title>HTML : APP24/MOB</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+<link href="https://fonts.googleapis.com/css?family=Orbitron:700" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  
+<style>
+html,body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+
+
+@font-face {  
+  font-family: arabic-flat;  
+  src: url( https://s3-us-west-2.amazonaws.com/s.cdpn.io/252403/JF-Flat-regular.ttf ) format("truetype");  
+}  
+
+body {
+  background-color: #ecf0f1;
+  text-align: center;
+  display: table;
+  position: absolute;
+  font-family: arabic-flat;
+
+}
+
+h1 {
+  color:#2980b9
+}
+
+fluid-container {
+     vertical-align: middle;
+  display:inline-block;
+}
+
+#head {
+  display: flex;
+  justify-content: center;
+  margin-top:-95px;
+  padding-top:35px;
+  width:130px;
+  height:130px;
+  border:3px solid #2980b9;
+  border-radius:30%;
+  background-color: #fff;
+  color: #ff8398;
+  font-size:32px;
+}
+
+#shelf {
+  width: 100%;
+  margin-top: 65px;
+  height: 60px;
+  background-color: #fff;
+  border:2px solid #dfdfdf;
+  left: 0;
+  right: 0;
+}
+
+#score-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:100px;
+  margin-top:110px;
+  width:450px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index:-1;
+  border-top:3px solid #ff8398;
+}
+
+#score{
+  font-family: 'Orbitron', sans-serif;
+  color: #2980ba;
+  text-shadow: -1px 2px 0px rgba(0, 0, 0, 0.06);
+  font-size:19px;
+  text-align: center;
+  padding:3px 0 0 0;  
+}
+
+#line {
+   margin:40px auto 30px auto;
+   border-bottom:2px solid #dfe0e0;
+   border-top:2px solid #ff8398;
+   display:block;
+   width:90%; 
+   height:240px;
+   background-color:rgb(247, 240, 240);
+   border-radius:30px;
+  
+}
+
+#tasbe7{
+  padding-top: 5px;
+  font-size: 36px;
+}
+
+#circle {
+  background-color: #34495e;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+  padding-top: 20px;
+  border-radius: 50%;
+  border: 10px solid #2c3e50; 
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+#circle:active {
+  border-width: 13px;
+}
+
+
+#circle p {
+  font-size: 32px;
+  color: #ecf0f1;
+  line-height: 145px;
+}
+
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+#plan{
+  font-size: 26px;
+  color: #9da349;
+  border-radius: 40px;
+  margin: 20px auto 20px auto;
+  padding: 10px;
+}
+</style>
+
+
+
+
+</head>
+
+<body translate="no">
+  
+ 
+   <div class="fluid-container">
+     <div id="shelf"></div>
+      <div id="head" class="center-block">مُسبح</div>
+      <select id="plan" onchange="chose()">
+        <option disabled selected >اختر خطتك</option>
+        <option value="1">بعد الصلاة </option>
+        <option value="2">ورد يومي </option>
+      </select>
+      <div id="line">      
+        <p id="score">score: 0</p>
+        <h1 id="tasbe7" style="text-shadow: rgba(86, 170, 255, 0) 1px 0px 4px; margin-top: 20px;"></h1></div>
+      <div id="circle" class="center-block"><p id="text">0</p></div>
+    </div>       
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+      <script id="rendered-js">
+         
+        function chose(){
+          plan = document.getElementById("plan").value;
+          if(plan ==1 ){
+            var clicks = 33;
+            document.getElementById("text").innerHTML = clicks;
+            document.getElementById("circle").onclick = function() {add()};
+          }else if(plan == 2 ){
+            var clicks = 100;
+            document.getElementById("text").innerHTML = clicks;
+            document.getElementById("circle").onclick = function() {day()};
+          }else if(plan == 3){
+            document.getElementById("circle").onclick = function() {your()};
+          }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        function add(){
+          document.getElementById("circle").onclick = function() {count()};
+          document.getElementById("tasbe7").innerHTML = "سبحان الله";
+          
+          var tasbe7at = ["الحمد لله", "الله اكبر"];
+            var clicks = 33;
+            var n = 0;
+            var tries = 0;
+            var score = 0;
+            
+
+            function count() {  
+        $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0.9)");
+        $("#tasbe7").css("margin-top", "22px");
+        setTimeout(function () {
+          $("#tasbe7").css("margin-top", "20px");
+          $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0)");
+        }, 150);
+        score++;
+        if (tries <= tasbe7at.length) {
+          if (clicks > 1) {
+            $("#score").html("score: " + score);
+            clicks--;
+            $("#text").html(clicks);
+          } else {
+            $("#text").html("33");
+            clicks = 33;
+            $("#tasbe7").html(tasbe7at[n]);
+            tries++;
+            n++;
+          }
+        } else if (tries == 3){
+          document.getElementById("tasbe7").innerHTML ="لا إله الا الله وحده لا شريك له , له الملك وله الحمد وهو على كل شيء قدير";
+          $("#score").html("score: " + score);
+          tries++;
+        }else{
+          alert("انتهيت")
+        }
+        
+      } 
+    }   
+
+    
+    function day(){
+          document.getElementById("circle").onclick = function() {countday()};
+          document.getElementById("tasbe7").innerHTML = "سبحان الله وبحمده سبحان الله العظيم";
+          
+          var tasbe7at =["استغفر الله واتوب اليه","اللهم صل وسلم على سيدنا محمد ","لا إله إلا الله وحده لا شريك له , له الملك وله الحمد وهو على كل شيء قدير"]
+            var clicks = 100;
+            var n = 0;
+            var tries = 0;
+            var score = 0;
+            
+
+            function countday() {  
+        $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0.9)");
+        $("#tasbe7").css("margin-top", "22px");
+        setTimeout(function () {
+          $("#tasbe7").css("margin-top", "20px");
+          $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0)");
+        }, 150);
+        score++;
+        if (tries <= tasbe7at.length) {
+          if (clicks > 1) {
+            $("#score").html("score: " + score);
+            clicks--;
+            $("#text").html(clicks);
+          } else {
+            $("#text").html("100");
+            clicks = 100;
+            $("#tasbe7").html(tasbe7at[n]);
+            tries++;
+            n++;
+          }
+        } else if (tries == 4){
+         
+          $("#score").html("score: " + score);
+          tries++;
+        }else{
+          alert("انتهيت")
+        }
+        
+      } 
+    }   
+
+ /*   function your(){
+          document.getElementById("circle").onclick = function() {yournum()};
+          document.getElementById("tasbe7").innerHTML = "سبحان الله وبحمده سبحان الله العظيم";
+          
+          var tasbe7at =["استغفر الله واتوب اليه","اللهم صل وسلم على سيدنا محمد ","لا إله إلا الله وحده لا شريك له , له الملك وله الحمد وهو على كل شيء قدير"]
+            var clicks = 100;
+            var n = 0;
+            var tries = 0;
+            var score = 0;
+            
+
+            function yournum() {  
+        $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0.9)");
+        $("#tasbe7").css("margin-top", "22px");
+        setTimeout(function () {
+          $("#tasbe7").css("margin-top", "20px");
+          $("#tasbe7").css("text-shadow", "1px 0 4px rgba(86,170,255,0)");
+        }, 150);
+        score++;
+        if (tries <= tasbe7at.length) {
+          if (clicks > 1) {
+            $("#score").html("score: " + score);
+            clicks--;
+            $("#text").html(clicks);
+          } else {
+            $("#text").html("100");
+            clicks = 100;
+            $("#tasbe7").html(tasbe7at[n]);
+            tries++;
+            n++;
+          }
+        } else if (tries == 4){
+         
+          $("#score").html("score: " + score);
+          tries++;
+        }else{
+          alert("انتهيت")
+        }
+        
+      } 
+    }    */    
+            
+         
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+
+ 
+</body></html>
