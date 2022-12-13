@@ -1,0 +1,808 @@
+<!DOCTYPE html><html class="sr"><head><style type="text/css">* {user-select: auto !important; -webkit-user-select: auto !important;}</style><input type="hidden" id="inject_idm_text_selection"></head><body bgcolor="black" style="height: 100%;"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+/*!
+ * قائمة جانبية ©
+ * جميع الحقوق محفوظة ©
+تصميم:سوبر بلس 
+ */
+
+/*homeblog7.blogspot.com CSS starts*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+.menu-outer:hover ~ .menu-close {
+  margin-right:-100px;
+}
+.menu-outer:hover .bar { background:rgba(100,200,240,.9); }
+.menu-outer > .nav ul { top:10%; }
+
+
+.menu-outer {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  font-family: 'Montserrat', serif;
+  z-index: 998;  
+  width: 100%;
+  left: 100%;
+  margin-left: -100px;
+  height: 200%;
+    background: rgb(31 37 46);
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s; 
+  -webkit-transform-origin: top left;
+  -moz-transform-origin: top left;
+  -ms-transform-origin: top left;
+  -o-transform-origin: top left;
+  transform-origin: top left;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu-outer:hover {
+  background: rgb(31 37 46);
+  left: 0;
+  margin-left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.menu-icon {
+  z-index: 999;
+  position: absolute;
+  top: 58px;
+  left: 15px;
+  width: 30px;
+  pointer-events: none;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-icon .bar {
+  background: rgba(250,250,250,1);
+  width: 100%;
+  height: 3px;
+  margin: 0 0 5px;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-outer:hover > .menu-icon {
+  opacity: 0;
+}
+.nav ul {
+  position:absolute;
+  width:100%;
+  padding: 0;
+  left: 10%;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+}
+.menu-outer:hover > .nav ul {
+  left: 0;
+}
+.nav li {
+  list-style:none;
+  text-align: center;
+  text-transform: uppercase;
+}
+.nav li a {
+  font-size: 2em;
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+  margin: 0 auto;
+  padding: 20px;
+  display:block;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  text-align:center;
+  font-family: 'Almarai';
+
+}
+.nav li a:hover {
+  color: rgba(255,255,255,1);
+}
+@media screen and (max-width: 600px), screen and (max-height: 600px) {
+  .nav ul {font-size:.75em;}
+  .nav ul a {padding: 10px;}
+}
+.menu-close {
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  right: 100%;
+  width: 200px;
+  height: 200px;
+  background: rgb(114 136 169);
+  cursor: pointer;
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  -o-transition: all ease .5s;
+  transition: all ease .5s;
+  -webkit-transform-origin: top right;
+  -moz-transform-origin: top right;
+  -ms-transform-origin: top right;
+  -o-transform-origin: top right;
+  transform-origin: top right;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu-close .menu-icon {
+  right: 15px; left: auto;top: 68px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.menu-close .bar {
+  background: rgba(250,250,250,1);
+  width: 100%;
+  height: 5px;
+  position:absolute;
+  -webkit-transform-origin: center;
+  -moz-transform-origin: center;
+  -ms-transform-origin: center;
+  -o-transform-origin: center;
+  transform-origin: center;
+}
+.menu-close .bar:first-child {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.menu-close .bar:last-child {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.tabs .widget li, .tabs .widget li {float:none}
+/*homeblog7.blogspot.com CSS ends*/
+
+
+
+/*!
+ * قائمة جانبية ©
+ * جميع الحقوق محفوظة ©
+ * تصميم : سوبر بلس
+ */
+
+
+
+
+
+
+
+
+
+
+
+body {
+  
+  
+  
+  font-family: Arial, Helvetica, sans-serif;
+    background-color: #1f252e;
+
+}
+  
+  
+.ShahidHeaderContainer_container__3vk3K {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    z-index: 1;
+    margin-left: 10px;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-evenly;
+
+
+}
+
+
+
+.topnav {font-family: 'Almarai', sans-serif;
+  overflow: hidden;
+  background-color: #1f252e;
+  position: relative;
+}
+
+.topnav #myLinks {
+  display: none;
+}
+
+.topnav a {font-family: 'Almarai', sans-serif;
+  float: right;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a.icon {font-family: 'Almarai', sans-serif;
+  float: left;
+}
+
+.topnav a:hover {
+  background-color: #1f252e;
+  color: white;
+}
+
+.active {font-family: 'Almarai', sans-serif;
+  background-color: #1f252e;
+  color: black;
+}
+</style>
+
+        
+ 
+<style>
+body {
+  font-family: Arial;
+}
+
+* {font-family: 'Almarai', sans-serif;
+  box-sizing: border-box;
+}
+
+.openBtn {
+  background: #f1f1f1;
+  border: none;
+  padding: 10px 15px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.openBtn:hover {
+  background: #bbb;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+}
+
+.overlay-content {
+  position: relative;
+  top: 46%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+  margin: auto;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  cursor: pointer;
+  color: white;
+}
+
+.overlay .closebtn:hover {
+  color: #ccc;
+}
+
+.overlay input[type=text@CCORCH@ {
+  padding: 15px;
+  font-size: 17px;
+  border: none;
+  float: left;
+  width: 80%;
+  background: white;
+}
+
+.overlay input[type=text@CCORCH@:hover {
+  background: #f1f1f1;
+}
+
+.overlay button {
+  float: left;
+  width: 20%;
+  padding: 15px;
+  background: #ddd;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.overlay button:hover {
+  background: #bbb;
+}
+</style>
+
+
+
+<script>
+function openSearch() {
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function closeSearch() {
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+    <style>/* latin-ext */
+            @font-face {font-family: 'Righteous'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/righteous/v9/1cXxaUPXBpj2rGoU7C9WhnGFucE.woff2) format('woff2'); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; } /* latin */
+            @font-face {font-family: 'Righteous'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/righteous/v9/1cXxaUPXBpj2rGoU7C9WiHGF.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }@font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 500; src: local('Tajawal Medium'), local('Tajawal-Medium'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l8KiHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; } @font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 500; src: local('Tajawal Medium'), local('Tajawal-Medium'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l8KiHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; } @font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 800; src: local('Tajawal ExtraBold'), local('Tajawal-ExtraBold'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l5anHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; }@font-face {font-family: 'Tajawal'; font-style: normal; font-weight: 800; src: local('Tajawal ExtraBold'), local('Tajawal-ExtraBold'), url(https://fonts.gstatic.com/s/tajawal/v3/Iurf6YBj_oCad4k1l5anHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjLj9ytf.woff2) format('woff2'); unicode-range: U+0600-06FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE80-FEFC; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjnj9ytf.woff2) format('woff2'); unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }@font-face {font-family: 'Changa'; font-style: normal; font-weight: 800; font-display: swap; src: url(https://fonts.gstatic.com/s/changa/v10/2-c79JNi2YuVOUcOarRPgnNGooxCZy22cjfj9w.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }</style>
+
+<style>
+
+index:-1;right:0;width:5px;height:5px;background:#ffffff1c;transform-origin:center;border-radius:50%;transform:scale(0);transition:0s all ease}.Hoverable:hover:after{transform:scale(200);opacity:0;transition:1s all ease}.advanced-search>label>i{line-height:0;vertical-align:middle;font-size:26px;color:#29b0ef;margin-left:10px}.advanced-search .form-ui .select-menu .dropdown-list li.active{background:#5260bd}.copyrights-me img{width:100px}footer.tornado-header>.container{min-height:unset;padding:15px 0;display:block}@media only screen and (max-width:900px){.advanced-search{min-width:100%;z-index:999;margin-bottom:15px}.Tabs{float:none;min-width:100%;overflow:auto}.Tabs>li{padding:12px 20px 14px;min-width:120px}}body:after{content:" ";position:fixed;width:100%;height:100%;top:0;bottom:0;left:0;right:0;background-image:url();background-position:center;background-size:cover;z-index:-17;opacity:.5}a.click-all small{color:#8bdaff}ul.SingleContentTerms{list-style:none;display:flex;margin:0 -10px 12px;flex-wrap:wrap;background:#1a1a39;padding:20px 30px 0 0;border-radius:10px}ul.SingleContentTerms>
+
+</style>
+
+
+
+
+<div>
+</div>
+
+	
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Page Title</title>
+		   <script src="https://unpkg.com/scrollreveal"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
+	
+	
+	<div class="container">
+		<div class="header">
+		<div class="hide"></div>
+
+	<div class="firstfield">
+	  
+   </div>
+
+
+<div>
+
+	<style type="text/css">
+	 
+		}
+		button{
+			background-color: white;
+			color: black;
+			border: none;
+			border-radius: 5px;
+			size: 20px;
+			width: 70px;
+			padding: 10px;
+		}
+		div .jordan{
+		  overflow-x: scroll;
+		  overflow-y: hidden;
+		  white-space: nowrap;}
+		}
+  
+	</style>
+
+
+
+
+
+          <!--meun starts-->
+
+      <div class="menu-outer">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <!--meun starts-->
+    <div class="nav">
+        <ul>
+           <li><a href="go:h1">الرئسية</a></li>
+           <li><a href="go:f.ar">افلام عربي</a></li> 
+           <li><a href="go:e0">افلام اجنبي</a></li> 
+           <li><a href="go:MA">مسلسلات عربي</a></li> 
+           <li><a href="go:M.TR">مسلسلات تركي</a></li>
+           <li><a href="go:ME">مسلسلات اجنبي</a></li> 
+           <li><a href="go:live">البث المباشر</a></li>
+           <li><a href="go:s12">سياستنا</a></li>
+           <li><a href="whatsapp://send?text=message_text&phone=+213771000000">اتصل بنا</a></li> 
+
+
+
+
+
+       </ul>
+   </div>
+   <!--homeblog7.blogspot.com widget ends-->
+</div>
+<a class="menu-close" onclick="return true">
+    <div class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</a>
+
+    <!--end meun starts-->
+
+
+
+<div>
+	<div class="firstfield">
+	  
+   </div>
+
+<div>
+
+	
+	<style type="text/css">
+	 
+		}
+		button{
+			background-color: white;
+			color: black;
+			border: none;
+			border-radius: 5px;
+			size: 20px;
+			width: 70px;
+			padding: 10px;
+		}
+		div .jordan2{
+		  overflow-x: scroll;
+		  overflow-y: hidden;
+		  white-space: nowrap;}
+		}
+  
+	</style>
+
+
+
+
+
+<header id="shahid-header" class="shahid-header_app-bar__3yogI views_header__3OJcl views_solid__wVSQj null views_header__3OJcl views_solid__wVSQj null"><div class="ShahidHeaderContainer_container__3vk3K"> <h2 id="appLogo" class="linkedLogo_logo__19bCI false">
+
+ <div align="center"> 
+
+
+        <a href="go:H1">
+<img class="linkedLogo_vipLogo__2X06A" src="data:image/png;base64,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" alt="Shahid VIP" height="24" title="AKOMOV"></a>
+
+   
+   
+   </div></h2><div class="ShahidHeaderContainer_container__3vk3K"><a href="#">
+<img class="linkedLogo_vipLogo__2X06A" src="https://i.ibb.co/sp4xQKk/coollogo-com-84602271.png" alt="AKOMOV VIP" height="24" title="AKOMOV VIP"></a><h2 class="ShahidHeaderContainer_item-container__3pAGj">
+  
+
+      </h2></div></div></header></div>
+
+
+
+
+
+
+
+      
+<div>
+ 
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="شاهد ">أفلام </a>
+  <div id="myLinks">
+  </div>
+  <a class="icon" onclick="myFunction()">
+    <b>المزيد</b>
+  </a>
+</div>   
+	
+<div>
+	<div class="firstfield">	  
+   </div>	
+
+
+
+
+<div align="center" class="jordan2">			 		
+<a href="#"> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+</div>
+
+
+<div>
+ 
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active">مسلسلات</a>
+  <div id="myLinks">
+  </div>
+  <a class="icon" onclick="myFunction()">
+    <b>المزيد</b>
+  </a>
+</div>   
+	
+<div>
+	<div class="firstfield">	  
+   </div>	
+<div align="center" class="jordan2">			 		
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+</div>
+
+
+<div>
+ 
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active">أنمي</a>
+  <div id="myLinks">
+  </div>
+  <a class="icon" onclick="myFunction()">
+    <b>المزيد</b>
+  </a>
+</div>   
+	
+<div>
+	<div class="firstfield">	  
+   </div>	
+<div align="center" class="jordan2">			 		
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/30gXfTC/home.png" width="115px" height="165px"></a>
+</div>
+
+  
+
+<div>
+ 
+<!-- Simulate a smartphone / tablet look -->
+<div class="mobile-container">
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a class="active">بث مباشر</a>
+  <div id="myLinks">
+  </div>
+  <a class="icon" onclick="myFunction()">
+    <b>المزيد</b>
+  </a>
+</div>   
+	
+<div>
+	<div class="firstfield">	  
+   </div>	
+<div align="center" class="jordan2">			 		
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a> 
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+
+<a href=""> <img class="jordan2" <img="" style="border-radius: 5px;" src="https://i.ibb.co/42kNDmm/bein-sport-1-logo.png" width="115px" height="165px"></a>
+</div>
+
+
+    <!--telma7 
+
+
+<div>
+</h2> 
+<!-- Simulate a smartphone / tablet look
+<div class="mobile-container">
+<!-- Top Navigation Menu 
+<div class="topnav">
+  <a  class="active">بين سبورت</a>
+  <div id="myLinks">
+  </div>
+  <a class="icon" onclick="myFunction()">
+    <b>beIN Sports </b>
+  </a>
+</div>   
+	</script>
+<div>
+	<div class="firstfield" >	  
+   </div>	
+<div align="center" class="jordan2">
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/958.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=67&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/959.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=70&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/960.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=68&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a> 
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/961.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=69&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/962.m3u8" > <img class=jordan2  
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=73&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/963.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=71&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a> 
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/964.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=58&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/955.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=65&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/956.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=66&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+
+<a href="https://matchfree.xyz/live/aiirrv88820314796855422-letssgooo/23210VgAE0p11/957.m3u8" > <img class=jordan2 
+<img style="border-radius: 5px;"src="https://proxies.bein-mena-production.eu-west-2.tuc.red/proxy/imgdata?objectId=72&type=100&format_w=125&format_h=125&ratio=1&languageId=ara" width="115px" height="65px"></a>
+</div>
+
+-->
+
+
+
+
+
+
+<div>
+
+ <!--------- التليجرام --------->
+
+
+
+<svg style="display:none">
+<defs>
+<symbol id="telegramfill" viewBox="0 0 100 100">
+<path d="M50 0c27.6 0 50 22.4 50 50s-22.4 50-50 50S0 77.6 0 50 22.4 0 50 0z" fill="#4eb7e6"></path><path d="M38.6 71c-1.7 0-1.4-.6-2-2.2l-5-16.3 30.7-19.2 3.6.9-3 8.1" fill="#c8daea"></path><path d="M38.6 71c1.3 0 1.9-.6 2.6-1.3 1.1-1.1 15.6-15.2 15.6-15.2L48 52.4l-8.2 5.2-1.1 13" fill="#a7c2d1"></path><path d="M39.5 57.8l20.9 15.5c2.4 1.3 4.1.6 4.7-2.2l8.5-40.2c.9-3.5-1.3-5.1-3.6-4.1L20 46.1c-3.4 1.4-3.4 3.3-.6 4.1l12.8 4L62 35.5c1.4-.9 2.7-.4 1.6.5" fill="#eff7fc"></path>
+</symbol>
+</defs>
+</svg>
+<div class="messanger telegram-luna is-active">
+<span class="telegram-luna__new" aria-hidden="true" style="display:none">+179</span>
+<a class="messanger__in" href="https://t.me/htmlapp24mob" target="_blank" title="Join our Telegram channel">
+<div class="messanger__thumbnail">
+<svg class="telegram-luna__icon">
+<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#telegramfill">
+</use>
+</svg>
+</div>
+<div class="messanger__desc">
+<h6 class="messanger__title telegram-luna__title">
+انضم الينا الأن عبر قناه تليجرم
+</h6>
+</div>
+</a>
+</div>
+<style>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet">
+
+.pulse{animation:pulse 2s infinite}
+@keyframes btnun-what{10%{transform:translate(0,200px)}50%{transform:translate(0,-40px)}70%{transform:scale(1.1)}}
+@keyframes pulse{50%{transform:scale(1.1)}}
+
+
+@keyframes blink{50%{opacity:0}from{opacity:1}to{opacity:1}}
+.messanger{background-color:#fff;border-radius:5px;bottom:20px;box-sizing:border-box;cursor:pointer;height:50px;padding:10px;opacity:0;padding:5px;pointer-events:none;position:fixed;right:20px;transition:all 0.2s;width:50px;z-index:999}
+.messanger.is-active{opacity:1;pointer-events:auto}
+.messanger:before{border-radius:5px;bottom:0;box-shadow:0 24px 24px rgba(14,10,50,0.25);content:"";left:0;pointer-events:none;position:absolute;right:0;top:0}
+.messanger:hover .messanger__desc{opacity:1;pointer-events:all}
+.messanger__desc{-ms-flex-positive:1;-webkit-box-flex:1;flex-grow:1;margin-left:10px;opacity:0;pointer-events:none;transition:opacity 0.2s}
+.messanger__in{-ms-flex-align:center;-webkit-box-align:center;align-items:center;display:-webkit-box;display:-ms-flexbox;display:flex;overflow:hidden;white-space:nowrap}
+.messanger__text{color:#13244f;font-size:0.875rem}
+.messanger__thumbnail{-ms-flex-item-align:baseline;align-self:baseline;height:40px;position:relative;width:40px}
+.messanger__thumbnail:after{-webkit-animation:blink 2s infinite;animation:blink 2s infinite;background-color:#23e16f;border:2px solid #fff;border-radius:50%;bottom:0;content:"";height:8px;position:absolute;right:0;width:8px}
+.telegram-luna:hover{width:292px}
+.telegram-luna__icon{height:40px;width:40px}
+.telegram-luna__title{color:#4ea8d1;font-size:0.875rem;font-size:0.75rem;text-transform:uppercase}
+.messanger a{background:transparent;border:0;color:#231c57;font-size:100%;margin:0;outline:0;padding:0;text-decoration:none;vertical-align:baseline}
+.messanger h6{background:transparent;border:0;font-size:100%;font-weight:400;margin:0;outline:0;padding:0;vertical-align:baseline;font-family: 'Almarai';text-align: center;}
+</style>
+
+
+
+
+ <!--------- التليجرام --------->
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></div></body></html>
