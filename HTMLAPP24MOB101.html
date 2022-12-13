@@ -1,0 +1,437 @@
+      
+       <!-- HTML : APP24/MOB -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML : APP24/MOB</title>
+        <style>
+           /* HTML : APP24/MOB*/
+
+body{    
+background:rgb(300,300,300);
+font-family: 'Varela Round', sans-serif;     
+}
+#lcon{
+height:100vh;    
+width:100vw;
+background:rgba(0,0,0,.8);
+position:fixed;
+left:0;top:0;    
+}
+#ltxt{
+width:100vw; 
+position:fixed;
+left:0;bottom:7vh;  
+font-weight:1000; 
+font-size:5vw;
+text-align:center;
+color:white;
+-webkit-animation:l 2s linear 0s normal infinite;
+}
+#ctxt{
+width:100vw; 
+position:fixed;
+left:0;bottom:2px;  
+font-weight:1000; 
+font-size:2vw;
+text-align:center;
+color:gray;
+}
+@keyframes l {
+50%{color:transparent;} 
+100%{color:white;}  
+}
+#player{
+height:55vw;    
+width:96vw;
+background:linear-gradient(135deg,rgba(300,0,100,.8),rgba( 300,200,100,.8)) ;
+position:absolute;
+left:0;top:0;
+border-radius:8vw;
+overflow:hidden;
+-webkit-backdrop-filter:blur(15px);
+box-shadow:0 0 1.5vw gray;
+backdrop-filter:blur(3px);
+}
+
+#pic{
+height:30vw;    
+width:30vw;
+background:rgba(0,0,0,.2);
+position:absolute;
+left:33vw;top:4vw;
+border-radius:50%; 
+box-shadow:0 0 4px black;   
+}
+#ctrlc{
+height:10vw;    
+width:90vw;
+background:rgba(300,300,300,.5);
+position:absolute;
+left:3vw;top:43vw;
+border-radius:50vw;
+}
+#bars{
+width:38vw;height:38vw;
+position:absolute;
+left:29vw;top:0;
+-webkit-transform:rotate(-90deg);   
+border-radius:50%;
+}
+#psn{
+height:5vw;width:100%;
+position:absolute;
+left:0;top:38vw;
+text-align:center;
+font-size:3vw;font-weight:1000;
+color:white;
+}
+.ctrl{
+height:4vw;width:4vw;
+position:absolute;
+top:3vw;
+opacity:.6;
+}
+.ctrl1{
+height:5vw;width:5vw;
+position:absolute;
+top:2.5vw;
+opacity:.6;
+}
+.ctrl2{
+height:5.5vw;width:5.5vw;
+position:absolute;
+top:2vw;
+opacity:.6;
+}
+#play{left:43vw;}
+#pause{left:43vw;}
+#next{right:25vw;}
+#prev{left:25vw;-webkit-transform:rotate(-180deg); }
+#suffon{left:8.5vw;}
+#suffoff{left:8.5vw;}
+#norept{right:8.5vw;}
+#allrept{right:8.5vw;}
+#onerept{right:8.5vw;}
+.like{
+height:6vw;width:6vw;
+position:absolute;
+top:3vw;  
+fill:red; 
+}
+.h{left:4.5vw;}
+.d{right:4.5vw;}
+#contr{
+height:97vh;width:96vw;
+position:fixed;
+top:2vw;left:2vw;
+background:rgba(220,220,220,.3); 
+border-radius:8vw; 
+}
+#listin{
+height:calc(97vh-60vw);width:96vw;
+position:absolute;
+top:60vw;left:0;
+background:rgba(300,300,300,.9); 
+border-radius:8vw;overflow:hidden;
+}
+#list{
+height:calc(97vh-60vw);width:94vw;
+position:absolute;
+top:9vw;left:1vw;
+background:rgba(0,0,0,.2); 
+border-radius:7.5vw; 
+overflow-x:hidden;
+overflow-y:scroll;
+}
+
+#album{
+height:4.5vw;    
+width:4.5vw;
+}
+#timecon{
+/*height:4vw;*/
+width:25vw;
+position:absolute;
+top:17.5vw;left:35.5vw;
+background:rgba(300,300,300,.9); 
+border-radius:7.5vw;  
+font-size:3vw;  
+font-weight:1000;
+text-align:center;  
+padding:0 .3vw 0 .2vw;
+}
+.albd{
+position:relative;
+top:-4vw;
+font-weight:1000;
+font-size:4vw;
+}
+#songs{
+padding:1vw 2vw 1vw 2vw;
+position:relative;
+top:2vw;left:2vw;
+font-weight:1000;
+font-size:2vw;
+color:red;
+}
+.strp{
+height:20vw;width:92vw;  
+background:linear-gradient(135deg,rgba(300,0,100,.8),rgba( 300,200,100,.8)) ;
+margin:1vw 1vw 1vw 1vw;
+border-radius:7vw;
+}
+.sti{
+display:inline-block;
+height:14vw;width:14vw;  
+background:white;
+margin:2vw 2vw;
+border-radius:6vw;   
+border:1vw solid white; 
+
+}
+.strl{
+height:11vw;width:11vw;  
+position:relative;
+right:-27vw;top:-17vw;
+}
+.stn{
+height:5vw;width:50vw;  
+display:inline-block;
+position:relative;
+top:-13vw;left:1vw;
+font-size:2.8vw;  
+font-weight:1000;
+text-align:left;  
+color:white;
+}
+.art{
+height:5vw;width:50vw;  
+display:inline-block;
+position:relative;
+top:-18vw;left:22vw;
+font-size:2.8vw;  
+font-weight:1000;
+text-align:left;  
+color:white;
+}
+.tolk{
+width:10vw;
+display:inline-block;
+text-align:center;
+font-size:3.2vw;
+font-weight:1000;
+position:relative;
+right:-16.5vw;top:-22.5vw;
+color:white;
+}
+            
+        </style>
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script> 
+    </head>
+    <body>
+<audio id="audio" src="" preload="none" autoplay></audio>
+<img style="height:100vh;width:100vw;position:fixed;left:0;top:0;"src="https://i.ibb.co/7W2GN6W/pngtree-green-atmosphere-minimalistic-ornate-background-illustration-image-258478.jpg"/>  
+<div id="contr">  
+<div id="player">
+<img id="holo"class="like h"src="https://www.dropbox.com/s/cyp5jcbebuk56uy/heart.svg?dl=0&raw=1"/>
+<img id="fill"class="like h" style="display:none;"src="https://www.dropbox.com/s/raf3h9mpltg7v1s/heart%20%281%29.svg?dl=0&raw=1"/>
+<a id="dl" href=""><img class="like d"src="https://www.dropbox.com/s/fpxrbaxbx0m5css/direct-download.svg?dl=0&raw=1"/></a>
+<svg viewbox="0 0 100 100" id="bars" ><circle cx='50'cy='50'r='45'stroke='rgba(300,300,300,.5)'stroke-width='3'fill='none'></circle>
+<circle id="seekbar" cx='50'cy='50'r='45'stroke='red'stroke-width='3'fill='none'stroke-linecap='round'stroke-dasharray='282.8571'stroke-dashoffset="282.8571"></circle><svg></svg>
+<img id="pic" src=""/>
+<span id="timecon"><span id="cur">00:00</span> | <span id="dur">00:00</span></span></span>
+<span id="psn">Unknown</span>
+<div id="ctrlc">
+<img id="play" class="ctrl" src="https://www.dropbox.com/s/5t5p7cnb5p6tg4n/27223.svg?dl=0&raw=1"/>  
+<img id="pause" style="display:none;" class="ctrl"src="https://www.dropbox.com/s/phbo4fog5xf2xj0/151859.svg?dl=0&raw=1"/>
+<img id="suffoff" class="ctrl1" src="https://www.dropbox.com/s/wo9qy1p0ms02btg/35737.svg?dl=0&raw=1"/>  
+<img id="suffon" style="display:none;" class="ctrl1"src="https://www.dropbox.com/s/3cbxkoa7nax5vjm/shuffle-arrows-hand-drawn-symbol.svg?dl=0&raw=1"/>
+
+<img id="norept" class="ctrl2" style="display:none;" src="https://www.dropbox.com/s/5od07so3g27relj/no%20repeat.svg?dl=0&raw=1"/>  
+<img id="allrept" class="ctrl2"src="https://www.dropbox.com/s/df5pj5okf5kblfo/pink%20repeat%20all.svg?dl=0&raw=1"/>
+<img id="onerept" style="display:none;" class="ctrl2" src="https://www.dropbox.com/s/yhzclugsvmr2qu9/pink%20repeat%20one.svg?dl=0&raw=1"/>  
+
+
+<img id="next" class="ctrl"src="https://www.dropbox.com/s/iq49o6kwmbj80ba/254428.svg?dl=0&raw=1"/>
+<img id="prev" class="ctrl"src="https://www.dropbox.com/s/iq49o6kwmbj80ba/254428.svg?dl=0&raw=1"/>
+</div>   
+</div>
+<div id="listin">
+<span id="songs">0 songs</span><center>
+<img id="album" class="albd"src="https://i.ibb.co/ZgPmHGQ/html-1.png"/><span class="albd">مكتبة الموسيقى</span></center><div id="list"></div></div></div><div id="lcon">
+<svg style='height:22vw;width:22vw;position:fixed;left:39vw;top:35vh;'viewBox='0 0 934.000000 534.000000'>
+<path transform='translate(0.000000,534.000000) scale(0.100000,-0.100000)'fill='white'stroke='gold' stroke-width="200px"d='M3477 5010 c-14 -11 -46 -53 -71 -93 -155 -249 -268 -669 -297 -1102 l-12 -180 -43 -48 c-187 -208 -340 -610 -359 -945 -3 -53 -8 -111 -11 -128 l-4 -31 -93 -13 c-388 -52 -448 -160 -216 -390 110 -110 292 -225 431 -273 10 -3 37 -46 62 -94 63 -125 134 -222 252 -343 l103 -105 -93 -48 c-128 -65 -287 -172 -373 -251 -177 -163 -161 -304 42 -362 196 -56 666 61 978 243 l69 40 74 -29 c168 -65 358 -91 621 -86 l172 3 78 -76 c135 -131 302 -227 536 -308 160 -55 269 -74 391 -69 85 3 107 7 140 27 77 48 89 153 31 269 -41 80 -172 226 -278 307 -36 28 -66 53 -66 57 -1 3 36 32 81 64 345 241 608 676 672 1107 9 58 16 120 16 139 0 30 7 39 45 67 72 52 270 246 373 366 204 238 399 586 371 662 -18 49 -244 160 -439 216 -200 58 -478 111 -674 128 -67 6 -130 12 -141 14 -36 7 -112 123 -129 196 -49 214 -193 407 -358 483 -235 109 -473 99 -775 -31 l-82 -36 -98 93 c-239 227 -546 437 -788 538 -104 44 -109 45 -138 22z'></path></svg>
+<div id="ltxt">...جارى التحميل </div>    
+<div id="ctxt">Copyright @HTML : APP24/MOB</div>    
+</div>
+<script>
+    // Created by ahmed ar
+
+eval("\x66\x69\x72\x65\x62\x61\x73\x65\x2e\x69\x6e\x69\x74\x69\x61\x6c\x69\x7a\x65\x41\x70\x70\x28\x7b\x64\x61\x74\x61\x62\x61\x73\x65\x55\x52\x4c\x3a\x22\x68\x74\x74\x70\x73\x3a\x2f\x2f\x73\x61\x6e\x2d\x66\x64\x31\x31\x61\x2e\x66\x69\x72\x65\x62\x61\x73\x65\x69\x6f\x2e\x63\x6f\x6d\x22\x7d\x29") 
+var D = firebase.database();
+Getval=function(path,Bval){
+D.ref(path).on("value",function (s){Bval(s.val());});}
+Update=function(Bval,path){
+D.ref(path).update(Bval);}
+window.onload=function(){
+const $=function(s){return document.getElementById(s)};
+const stf=function(s){sec=Math.ceil(s%60)-(Math.ceil(s%60)?1:0);
+S=sec<10?'0'+sec:sec;M="0"+(parseInt(s/60));return M+':'+S;}
+var Like=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+//Update({like:Like})
+var seekbar=$("seekbar"),srklen=(44*45)/7,audio=$("audio"),barR,shuffle=false,repeatMode="all",Now=3;
+$("listin").style.height=window.innerHeight*.97-window.innerWidth*.6+"px";
+$("list").style.height=window.innerHeight*.97-window.innerWidth*.7+"px";
+var Songs=[
+{  name:"الفاتحة",
+   iurl:"https://ar.assabile.com/media/photo/full_size/ahmed-al-ajmi-979.jpg",
+   surl:"https://server10.mp3quran.net/download/ajm/001.mp3",
+    art:"أحمد بن علي العجمي",
+    dur:"00:43",
+    like:false
+},
+{  name:"الفاتحة",
+   iurl:"https://ar.assabile.com/media/photo/full_size/ahmed-al-ajmi-979.jpg",
+   surl:"https://server10.mp3quran.net/download/ajm/001.mp3",
+    art:"أحمد بن علي العجمي",
+    dur:"00:43",
+    like:false
+},
+{  name:"الفاتحة",
+   iurl:"https://ar.assabile.com/media/photo/full_size/ahmed-al-ajmi-979.jpg",
+   surl:"https://server10.mp3quran.net/download/ajm/001.mp3",
+    art:"أحمد بن علي العجمي",
+    dur:"00:43",
+    art:"أحمد بن علي العجمي",
+    like:false
+}, 
+{  name:"الفاتحة",
+   iurl:"https://ar.assabile.com/media/photo/full_size/ahmed-al-ajmi-979.jpg",
+   surl:"https://server10.mp3quran.net/download/ajm/001.mp3",
+    art:"أحمد بن علي العجمي",
+    dur:"00:43",
+    art:"أحمد بن علي العجمي",
+    like:false
+}, 
+
+];
+$("songs").textContent=Songs.length+" سورة";
+Getval('like',function(d){
+Like=d;    
+for(var i=0;i<Songs.length;i++){
+new $("l"+i).textContent=Like[i];
+}
+$('lcon').style.display="none";
+})
+var Set=function(n){
+audio.src=Songs[n].surl;
+$("pic").src=Songs[n].iurl;
+$("dur").textContent=Songs[n].dur;
+$("psn").textContent=Songs[n].name;
+seekbar.style.strokeDashoffset=srklen;
+$("dl").href=Songs[n].surl.replace("dl=0","dl=1")
+if(Songs[n].like){
+$("holo").style.display="none"
+$("fill").style.display="block"
+}else{
+$("holo").style.display="block"
+$("fill").style.display="none"}
+}
+Set(Now);
+var strpset=function(n){$("s"+n).onclick=function(){Now=n;Set(Now);play()}};
+
+var play=function(){ $("play").style.display="none";
+$("pause").style.display="block"; 
+var playPromise =audio.play();if(playPromise !== undefined){playPromise.then(function(){}).catch(function(error){});}
+}
+var pause=function(){ $("pause").style.display="none";
+$("play").style.display="block"; 
+var playPromise =audio.pause();if(playPromise !== undefined){playPromise.then(function(){}).catch(function(error){});}
+}
+var suffoff=function(){
+$("suffoff").style.display="none";
+$("suffon").style.display="block";  
+shuffle=true;  
+}
+var suffon=function(){
+$("suffoff").style.display="block";
+$("suffon").style.display="none"; 
+shuffle=false;     
+}
+var norept=function(){
+$("norept").style.display="none";
+$("allrept").style.display="block";  
+repeatMode="all"  
+}
+var allrept=function(){
+$("allrept").style.display="none";
+$("onerept").style.display="block"; 
+repeatMode="one"     
+}
+var onerept=function(){
+$("onerept").style.display="none";
+$("norept").style.display="block"; 
+repeatMode="no"   
+}
+$("next").onclick=function(){Now>Songs.length-2?Now=0:Now+=1;Set(Now);play()}
+$("prev").onclick=function(){Now<1?Now=Songs.length-1:Now-=1;Set(Now);play()}
+
+audio.ontimeupdate=function(){
+$("cur").textContent=stf(audio.currentTime);
+seekbar.style.strokeDashoffset=srklen-(audio.currentTime/audio.duration)*srklen;
+}
+audio.onended=function(){
+if(repeatMode=="no"){pause();}
+if(repeatMode=="one"){play();}
+if(repeatMode=="all"&&!shuffle){Now>Songs.length-2?Now=0:Now+=1;Set(Now);play()}
+if(repeatMode=="all"&&shuffle){Now=(Math.ceil(Math.random()*Songs.length)-1);Set(Now);play()}
+}
+$("play").onclick=function(){play()}
+$("pause").onclick=function(){pause()}
+$("suffon").onclick=function(){suffon()}
+$("suffoff").onclick=function(){suffoff()}
+$("norept").onclick=function(){norept()}
+$("allrept").onclick=function(){allrept()}
+$("onerept").onclick=function(){onerept()}
+
+$("holo").onclick=function(){
+$("holo").style.display="none";
+$("fill").style.display="block";
+Like[Now]+=1;Update({like:Like})
+Songs[Now].like=true;
+}
+$("fill").onclick=function(){
+$("holo").style.display="block";
+$("fill").style.display="none"; 
+Like[Now]-=1;Update({like:Like})
+Songs[Now].like=false;
+}
+var touch=function(e){
+e.cancelable?e.preventDefault():'';
+var x=e.touches[0].pageX,y=e.touches[0].pageY,w=window.innerWidth,ang=(Math.atan2(y-w*.21,x-w*.5)*180)/(22/7),angle=ang>0?90+ang:(450+ang)<360?450+ang:90+ang;
+barR=((360-angle)/360)
+seekbar.style.strokeDashoffset=srklen*barR;
+}
+$("bars").ontouchstart=touch;
+$("bars").ontouchmove=touch;
+$("bars").ontouchend=function(){
+try{
+audio.currentTime=audio.duration-barR*audio.duration;
+}catch(er){}  
+$("cur").textContent=stf(audio.duration-barR*audio.duration);
+}
+for(var i=0;i<Songs.length;i++){
+$('list').innerHTML+="<div class='strp' id='s"+i+"'><img class='sti'src='"+Songs[i].iurl+"'/>  <span class='stn'>"+Songs[i].name+" . "+Songs[i].dur+"</span><span class='art'>"+Songs[i].art+"</span><img class='strl' src='https://www.dropbox.com/s/cyp5jcbebuk56uy/heart.svg?dl=0&raw=1'/><span class='tolk'id='l"+i+"'>0</span></div>";  
+};for(var i=0;i<Songs.length;i++){new strpset(i)}
+}
+    
+</script>
+    </body>
+</html>
+        
+        
+        
+      
