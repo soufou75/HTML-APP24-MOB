@@ -1,0 +1,55 @@
+<link rel="stylesheet"  href="https://cdn.plyr.io/3.4.6/plyr.css" >
+<script type="text/javascript" src="https://cdn.plyr.io/3.4.6/plyr.js"></script>
+<style type="text/css">
+body{
+padding:0;
+  margin:0;
+}
+.container {
+  width: 100%;
+  padding:0;
+  margin:0;
+
+}
+.plyr {
+  height:100%;
+}
+</style>
+<div class="container">
+<video controls crossorigin playsinline poster="https://i.ibb.co/vw97vQt/276199325-3179049858977330-2464270662607358022-n.jpg" id="player">
+        <!-- Video files -->
+<source src="https://admdn1.cdn.mangomolo.com/adsports1/smil:adsports1.stream.smil/playlist.m3u8" type="video/mp4" size="576">
+<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+<source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1440p.mp4" type="video/mp4" size="1440">
+
+<!-- Fallback for browsers that don't support the <video> element -->
+<a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download>Download</a>
+</video>
+
+</div>
+
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => { 
+  const player = new Plyr('#player');
+  window.player = player;
+  function on(selector, type, callback) {
+    document.querySelector(selector).addEventListener(type, callback, false);
+  }
+  on('.js-play', 'click', () => { 
+    player.play();
+  });
+  on('.js-pause', 'click', () => { 
+    player.pause();
+  })
+  on('.js-stop', 'click', () => { 
+    player.stop();
+  });
+  on('.js-rewind', 'click', () => { 
+    player.rewind();
+  });
+  on('.js-forward', 'click', () => { 
+    player.forward();
+  });
+});
+</script>
