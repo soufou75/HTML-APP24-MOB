@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>𝑆HTML : APP24/MOB</title>
+  
+<link href=" https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" >
+
+  
+  
+<script type='text/javascript' src="https://cdn.jsdelivr.net/npm/afterglowplayer@1/dist/afterglow.min.js"></script>
+
+
+</head>
+
+  <style>
+          
+
+            .wrap {
+                margin-top: 150px;
+                perspective: 1000px;
+                perspective-origin: 50% 50%;
+			
+                /* Background stripes animation */
+                animation: bganim 3s linear 2s infinite;
+            }
+
+            @keyframes bganim {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: 80px;
+                }
+            }
+
+            .cube {
+                margin: 2px;
+                position: relative;
+						
+                height: 50px;
+                width: 50px;
+                transform-style: preserve-3d;
+            }
+
+                .cube div {
+                    position: absolute;
+                    padding: 0px;
+                    box-sizing: border-box;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 50;
+                   
+                    transition: transform 0.2s ease-in;
+                }
+
+            .front {
+                transform: translateZ(-70px);
+				background-color:#6A1B9A
+            }
+
+            .back {
+                transform: translateZ(-100px) rotateY(180deg);
+				background-color:#6A1B9A
+            }
+
+            .right {
+                transform: rotateY(-270deg) translateX(100px);
+                transform-origin: top right;
+				background-color:#6A1B9A
+            }
+
+            .left {
+                transform: rotateY(270deg) translateX(-100px);
+                transform-origin: center left;
+				background-color:#6A1B9A
+            }
+
+            .top {
+                transform: rotateX(-270deg) translateY(-100px);
+                transform-origin: top center;
+				background-color:#6A1B9A;
+            }
+
+            .bottom {
+                transform: rotateX(270deg) translateY(100px);
+                transform-origin: bottom center;
+				background-color:#6A1B9A;
+            }
+
+            @keyframes rotate {
+                from {
+                    transform: rotateX(0deg) rotateY(0deg);
+                }
+
+                to {
+                    transform: rotateX(360deg) rotateY(360deg);
+                }
+            }
+
+            .cube {
+                animation: rotate 10s infinite linear;
+            }
+
+            
+        </style>
+   
+
+
+<style>
+html,
+body {
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+</style>
+
+<style>
+.button2 {width: 99%;}
+.button {
+    background-color: white;
+    border: none;
+    color: #6A1B9A;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'El Messiri', sans-serif;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0s; /* Safari */
+    transition-duration: 0s;
+    cursor: pointer;
+}
+
+#6A1B9A
+.button2 {
+    background-color: #6A1B9A; 
+    color: white; 
+    border: 2px solid #6A1B9A;
+}
+
+
+
+.button2 {
+    background-color: white; 
+    color: #6A1B9A; 
+    border: 2px solid #6A1B9A;
+}
+
+.button2:hover {
+    background-color: #6A1B9A;
+    color: white;
+    border: 2px solid #6A1B9A;
+    font-weight: 900;
+  	font-family: 'El Messiri', sans-serif;
+    letter-spacing: 2px;
+}
+
+
+</style>
+
+
+<style>
+  body {
+    margin-top: 10px;
+    background: #6A1B9A;
+    text-align: center; 
+    color: #6A1B9A;
+    font-family: 'El Messiri', sans-serif;
+    background: white;
+</style>
+
+
+	<style type="text/css">
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
+.buttoncontrols1 {
+  display: inline-block;
+  padding: 5px 7px;
+  font-size: 10px;
+  
+}
+
+.buttoncotrols1:hover {background-color: #6A1B9A}
+
+.button:active {
+  background-color: #6A1B9A;
+  box-shadow:  #6A1B9A;
+  transform: translateY(2px);
+}	
+	</style>
+	
+
+
+<body>
+<h1 style="text-align: center;  padding-top: 58%;"><span style="color: #6A1B9A;"><span style="color:#6A1B9A;"></span></span></h1>
+<h4 style="text-align: center;">HTML : APP24/MOB</h4>
+  <div class="row">
+    <div class="col-xs-6"><div style="position: fixed; top: 0px; width: 100%"><center>
+    
+     
+      <video class="afterglow" poster="https://i.ibb.co/30gXfTC/home.png" id='videoplayer'   title='Video 01' width='16' height='9' data-autoresize="fit"  src="https://archive.org/download/the.-smurfs-1-2011.-ar/The.Smurfs_1_2011.AR.mp4"></video>
+<div style="background-color:white
+"><center>
+        
+
+  <Button type="button" class="buttoncontrols1"  onclick="rwd15svideoplayer()" >
+<i class="fas fa-fast-backward"></i> [ 15s ]
+</Button>
+      
+
+  <button class="buttoncontrols1"  onclick="rwd5svideoplayer()" 
+  >
+<i class="fas fa-step-backward"></i> [ 5s ]
+  </button>
+
+  <button class="buttoncontrols1" onclick="afterglow.getPlayer('videoplayer').play()" >
+<i class="fas fa-play"></i></button>
+  <button class="buttoncontrols1" onclick="afterglow.getPlayer('videoplayer').pause()" >
+<i class="fas fa-pause"></i>
+  </button>
+  
+  </button>
+  
+  <button class="buttoncontrols1" onclick="afterglow.getPlayer('videoplayer').requestFullscreen()" >
+<i class="fas fa-external-link-square-alt"></i></button>
+  
+  <button class="buttoncontrols1" onclick="fwd5svideoplayer()" >
+[ 15s ] <i class="fas fa-step-forward"></i>
+  </button>
+  
+  <Button type="button" class="buttoncontrols1" onclick="fwd15svideoplayer()" >
+[ 15s ] <i class="fas fa-fast-forward"></i>
+  </button>
+  
+</div>
+    
+      
+    </div>
+
+
+<script>
+var videoplayer = document.getElementById("videoplayer");
+
+
+    function playPausevideoplayer() {
+    if (videoplayer.paused)
+        videoplayer.play();
+    else
+        videoplayer.pause();
+
+document.getElementById('controls2').style.display='block';
+document.getElementById('controls2').style.display='none';
+
+}
+
+
+
+function rwd5svideoplayer() { 
+    videoplayer.currentTime=videoplayer.currentTime - 5; }
+function fwd5svideoplayer() { 
+    videoplayer.currentTime=videoplayer.currentTime + 5; }
+function rwd15svideoplayer() { 
+    videoplayer.currentTime=videoplayer.currentTime - 15; }
+function fwd15svideoplayer() { 
+    videoplayer.currentTime=videoplayer.currentTime + 15; }
+
+
+function toggleFullScreenvideoplayer(){
+
+	if(videoplayer.requestFullScreen){
+		videoplayer.requestFullScreen();
+	} else if(videoplayer.webkitRequestFullScreen){
+		videoplayer.webkitRequestFullScreen();
+	} else if(videoplayer.mozRequestFullScreen){
+		videoplayer.mozRequestFullScreen();
+	}
+}
+
+</script>
+
+
+
+
+    
+    </div>
+    
+    
+    
+    
+    <h4 style="text-align: center;"><span style="color: #6A1B9A;">الحمد لله الذي من علينا بالخير</h4>
+
+<center>
+
+    </center>
+     
+            
+  
+    
+<div class="col-xs-6">
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('https://archive.org/download/2022_20221211_20221211/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82%20%D9%83%D8%B1%D8%AA%D9%88%D9%86%20%D8%A3%D9%8A%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%A7%D9%85%20%D8%B2%D9%85%D9%80%D9%80%D9%80%D9%80%D9%80%D9%80%D8%A7%D9%86%20%D9%85%D8%AA%D9%88%D9%81%D8%B1%20%D8%A7%D9%84%D8%A3%D9%86%20%D8%B9%D9%84%D9%89%20%D8%A8%D9%84%D8%A7%D9%8A%20%D8%B3%D8%B7%D9%88%D8%B1%20%D8%B4%D8%A7%D9%87%D8%AF%20%D9%83%D9%84%20%D8%A7%D9%84%D9%83%D8%B1%D8%AA%D9%88%D9%86%D8%A7%D8%AA%20%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9%20%F0%9F%A5%B02022%F0%9F%A5%B0.mp4').play();"><button class="button button2">الحلقة الاولي</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('https://archive.org/download/the.-smurfs-1-2011.-ar/The.Smurfs_1_2011.AR.mp4').play();"><button class="button button2">الحلقة الثانية</button></a></p> 
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/3.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">الحلقة الثالثة</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/4.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">الحلقة الرابعة</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/5.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">الحلقة الخامسة</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/6.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">الحلقة السادسة</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/7.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 7</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/8.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 8</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/9.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 9</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/10.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 10</button></a></p>
+
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/11.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 11</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/12.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 12</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/13.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 13</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/14.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 14</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/15.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 15</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/16.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 16</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/17.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 17</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/18.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 18</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/19.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 19</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/20.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 20</button></a></p>
+
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/21.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 21</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/22.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 22</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/23.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 23</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/24.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 24</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/25.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 25</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/26.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 26</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/27.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 27</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/28.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 28</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/29.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 29</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/30.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 30</button></a></p>
+
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/31.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 31</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/32.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 32</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/33.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 33</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/34.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 34</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/35.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 35</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/36.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 36</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/37.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 37</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/38.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 38</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/39.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 39</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/40.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 40</button></a></p>
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/41.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 41</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/42.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 42</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/43.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 43</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/44.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 44</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/45.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 45</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/46.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 46</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/47.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 47</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/48.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 48</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/49.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 49</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/50.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 50</button></a></p>
+
+
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/51.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 51</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/52.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 52</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/53.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 53</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/54.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 54</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/55.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 55</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/56.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 56</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/57.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 57</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/58.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 58</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/59.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 59</button></a></p>
+<p style="text-align: center;"><a class="btn btn-default" onClick="afterglow.getPlayer('videoplayer').pause().currentTime(0).src('http://cdn4.niazitv.pk:786/Turkish-Dramas-NiaziTV-App/Kosum-Sultan/60.mp4/tracks-1,2/index.m3u8').play();"><button class="button button2">Episode 60</button></a></p>
+
+
+				
+
+	  
+	  
+    </div>
+  </div>
+</body>
+
+</html>
