@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html dir="rtL">
+<head>
+<meta charset="UTF-8">
+<title>HTML : APP24/MOB</title>
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Cairo', sans-serif;}
+body{background:#000000;}
+div .xstv{overflow-x:scroll;overflow-y:hidden;white-space:nowrap;margin:1px;border-radius:7px;}
+#header{position:fixed;width:100%;top:-5px;}
+footer{background:#000;display:flex;width:100%;bottom:0;justify-content:space-around;align-items:center;padding:6px 2px;position:fixed;left:0;right:0px;color:#000000;}
+footer div{font-size:10px;text-align:center;justify-content:center;align-items:center;}
+footer i{padding-left:0px;}
+/*footer end*/
+footer img{height:20px;width:20px;margin-bottom:3px;}
+footer svg{height:20px;width:20px;margin-bottom:3px;}
+footer span{transform:scale(1);}
+#s-f{margin-bottom:40px;}
+.slider{width:100%;margin:auto;overflow:hidden;}
+.slider ul{display:flex;padding:0;width:400%;
+animation:cambio 10s infinite alternate linear;}
+.slider li{width:100%;list-style:none;}
+.slider img{width:100%;}
+@keyframes cambio{0% {margin-left: 0;}20% {margin-left: 0;}25% {margin-left: -100%;}45% {margin-left: -100%;}50% {margin-left: -200%;}70% {margin-left: -200%;}75% {margin-left: -300%;}100% {margin-left: -300%;}}
+</style>
+<script type="text/javascript">
+//tabs
+function xavi(tabc) {var i;
+var xavi = document.getElementsByClassName("xaviec");
+for (i = 0; i < xavi.length; i++) {xavi[i].style.display = "none";}
+document.getElementById(tabc).style.display = "block";}
+</script>
+</head>
+<body>
+<!-- Header -->
+<div id="home" class="xaviec">
+<div id="header">
+<div id="header-content">
+</div></div>
+<!-- Slider Portada -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<title>Like</title>
+<meta name="description" content="...." />
+<meta name="robots" content="all,index,follow" /><meta name = "viewport" content = "initial-scale = 1.1, user-scalable = no"><meta charset="UTF-8" />
+<link rel="manifest" href="https://www.socialcreator.com/like99/manifest.json">
+<link rel="apple-touch-icon" href="https://www.socialcreator.com/app-creator/launchers/6.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Like">
+<link rel="stylesheet" href="https://www.socialcreator.com/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" type="text/css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-animate-opacity{-webkit-animation:opac 1s;animation:opac 1s}
+@-webkit-keyframes opac{from{opacity:0} to{opacity:1}}
+@keyframes opac{from{opacity:0} to{opacity:1}}
+
+
+html{min-height:100%;}
+body
+{
+margin:0px;padding:0px;font-family:Roboto;background-color:black;}
+
+h1.cab{margin-left:10px;}
+h3.cab{margin-left:10px;}
+.txtgen{font-size:18px;}
+.txtgen2{font-size:16px;}
+@media all and (max-width: 460px)
+{
+	h1.cab{font-size:22px;}
+	h3.cab{font-size:16px;}
+	.txtgen{font-size:16px;}
+	.txtgen2{font-size:16px;}
+}
+
+
+.topcmain{border:0px;transition:background-color 0.2s ease;black-space:nowrap;cursor:pointer;}
+.topcmain:hover{background-color:#939393;}
+@media all and (max-width: 790px)
+{
+	.topcmain:hover{background-color:#939393;}
+}
+
+hr{position:inherit;height: 1px;border: 0;border-top: 1px solid;margin: 1em 0;padding: 0;}
+
+.brillar{opacity: 0.7;transition:opacity 0.2s ease;}
+.brillar:hover{opacity: 1;}
+
+.boton1{
+	padding:10px;
+	font-size:18px;
+	font-family:Roboto;
+	cursor:pointer;
+	transition:background-color 0.2s ease;
+	color:black;
+	background-color:#;
+}
+.boton1:hover{background-color:#1e1e1e;}
+.somb{box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.tit_card{font-size:18px;margin:5px;}
+.subtit_card{font-size:14px;margin:5px;}
+.fecha_card{font-size:14px;margin:5px;}
+
+.tprodimgs{width:500px;}
+.tprodflecha{left:462px;}
+.mySlidesProd{max-width:490px;}
+.divmapa{width:500px;}
+.videoprod{width:500px;height:375px;}
+@media all and (max-width: 500px)
+{
+	.tprodimgs{width:250px;}
+	.tprodflecha{left:212px;}
+	.mySlidesProd{max-width:240px;}
+	.divmapa{width:250px;}
+	.videoprod{width:250px;height:188px;}
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width:600px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+	.mySlides {display:none}
+	.ss-badge {height:13px;width:13px;padding:0;cursor:pointer;background-color:#666666;}
+	* {
+	    box-sizing: border-box;
+	}
+
+	.row-grid:after {
+	    content: "";
+	    clear: both;
+	    display: block;
+	}
+
+	[class*="col-"] {
+	    float: left;
+	    padding: 15px;
+	    width: 100%;
+	}
+	@media only screen and (min-width: 791px) {
+	    .col-2 {width: 50%;}
+	    .col-3 {width: 33.33%;}
+	    .col-4 {width: 25%;}
+	    .col-5 {width: 20%;}
+	    .col-6 {width: 16.66%;}
+	    .col-7 {width: 14.28%;}
+	    .col-8 {width: 12.5%;}
+	}
+	
+		.centrado1{float:left;position:relative;left:50%;}
+	.centrado2{float:left;position:relative;left:-50%;}
+
+		@media only screen and (min-width: 791px) {
+	    .col-22 {width: auto;}
+	}
+	
+	@media only screen and (min-width: 1116px) {
+	    .col-33 {width: auto;}
+	}
+
+</style>
+<script src="https://www.socialcreator.com/jquery-1.11.3.min.js"></script>
+<script src="https://www.socialcreator.com/dom/js_getCookie.js"></script>
+<script language="javascript">
+
+$(document).ready(function(){
+	$(document).click(function() {
+	    $("#avisos").hide();
+	});
+});
+
+function fcaddia(d_str,idaviso)
+{
+	var d_aux = new Date(2000+parseInt(d_str.substr(4,2)),parseInt(d_str.substr(2,2))-1,parseInt(d_str.substr(0,2)),parseInt(d_str.substr(6,2)),parseInt(d_str.substr(8,2)));
+	d_aux.setMinutes(d_aux.getMinutes() - d_aux.getTimezoneOffset());
+	var d_aux_3=new Date(d_aux);
+	d_aux_3.setHours(0,0,0,0);
+
+	var cad_dia="";
+	var today=new Date();
+	today.setHours(0,0,0,0);
+	var yesterday=new Date(today);
+	yesterday.setDate(yesterday.getDate()-1)
+	if(d_aux_3.getTime()==today.getTime()){cad_dia="Today";}
+	else if(d_aux_3.getTime()==yesterday.getTime()){cad_dia="Yesterday";}
+	else
+	{
+		var dia_aux=d_aux_3.getDate();if(dia_aux<10){dia_aux="0"+dia_aux;};
+		var mes_aux=d_aux_3.getMonth()+1;if(mes_aux<10){mes_aux="0"+mes_aux;};
+					cad_dia=dia_aux+"-"+mes_aux+"-"+d_aux_3.getFullYear();
+			};
+	var h_aux=d_aux.getHours();if(h_aux<10){h_aux="0"+h_aux;};
+	var mi_aux=d_aux.getMinutes();if(mi_aux<10){mi_aux="0"+mi_aux;};
+	cad_dia+=" "+h_aux+":"+mi_aux;
+
+	$(".fh"+idaviso).html(cad_dia);
+};
+
+function fvisto(id)
+{
+	$(".av_ci"+id).hide();
+	$(".av_cr"+id).hide();
+	var n_aux=$("#av_nnuevos").html()-1;
+	if(n_aux==0){$("#av_nnuevos").hide();}
+	else{$("#av_nnuevos").html(n_aux);};
+    $.ajax({
+      type: "GET",
+      url: "https://www.socialcreator.com/dom/aviso_leido.php?idusu=16788766",
+      data: "avle="+id
+     });
+}
+
+function falert(cad)
+{
+	document.getElementById("modaltxt").innerHTML=cad;
+	document.getElementById('divmodal').style.display="block";
+}
+function fconfirm(cad,f,p)
+{
+	document.getElementById("modaltxtconfirm").innerHTML=cad;
+	$("#btnmodalok").prop('onclick',null).off('click');	$("#btnmodalok").click(function() {
+		$('#divmodalconfirm').hide();
+				if(f.indexOf('@')!=-1)
+		{
+			f=f.split("@");
+			if(f.length==3){self.frames[f[0]][f[1]][f[2]](p);}
+			else if(f.length==2){self.frames[f[0]][f[1]](p);};
+		}
+		else
+		{
+    		window[f](p);
+    	};
+  	});
+	document.getElementById('divmodalconfirm').style.display="block";
+}
+
+
+jQuery(function( $ )
+{
+	
+	});
+</script>
+
+
+</head>
+<body>
+
+
+
+
+<div id="divmodal" class="modal" style="display:none;" onclick="this.style.display='none';">
+  <div id="divmodalcontent" class="modal-content">
+    <span class="close">×</span>
+    <p id="modaltxt"></p>
+  </div>
+</div>
+<div id="divmodalconfirm" class="modal" style="display:none;">
+  <div class="modal-content">
+    <p id="modaltxtconfirm"></p>
+    <button class="w3-btn w3-small w3-blue-grey" id="btnmodalok">OK</button>
+    <button class="w3-btn w3-small w3-light-grey" style="margin-left:10px;" onclick="$('#divmodalconfirm').hide();">Cancel</button>
+  </div>
+</div>
+
+
+
+
+<script>
+function fzoom(dir)
+{
+	document.getElementById("divmodalcontent").style.marginTop="2%";	document.getElementById("modaltxt").innerHTML="<div align='center'><img src='"+dir+"' style='border:0;max-width:100%;'></div>";
+	$('#divmodal').show();
+}
+</script>
+
+	<div>
+			<div class="w3-row">
+		<div class="w3-col m12 w3-center" style="padding:10px;">		<div class="centrado1">
+		<div class="centrado2">
+					<div class=""><a rel="nofollow" href="go:down" target="_blank"><img src="https://i.ibb.co/kygh31D/maxresdefault.jpg" class="" style="max-width:100%;"></a></div>		</div>
+		</div>
+	</div>		</div>
+		</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Slider Poster -->
+<div align="center" class="xstv">
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:fcb"><img class="xstv" src="https://i.ibb.co/L9hpHmC/fcb.jpg" width="75px" height="75px"></a>
+<a href="go:ytb"><img class="xstv" src="https://i.ibb.co/XCPrnfd/ytb.jpg" width="75px" height="75px"></a>
+<a href="go:msg"><img class="xstv" src="https://i.ibb.co/CvJpY4M/msg.jpg" width="75px" height="75px"></a>
+<a href="go:viid"><img class="xstv" src="https://i.ibb.co/HFRJ0WM/viid.jpg" width="75px" height="75px"></a>
+
+</div></div>
+<!-- Slider Poster -->
+<div align="center" class="xstv">
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/ngLh2g7/006.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/MfQGQfb/007.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/tYNWc4B/008.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/pX7Qv7J/009.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/7JTtWXn/010.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/6PvfRVQ/011.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/N3Gs8cX/012.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/1fxRm5n/013.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/NZb8ML7/014.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/r3CfNNL/015.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/rFfw1px/016.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/VH9dknW/017.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/MRm9TCM/018.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/SP0ByPK/019.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/tpy0Mbb/020.png" width="95px" height="135px"></a>
+</div></div>
+<!-- Slider Poster -->
+<div align="center" class="xstv">
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/jkWYpSn/021.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/QvPt9F5/022.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/ZctZbV3/023.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/jGLLHCb/024.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/9Wnzf58/025.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/bdVdzMT/026.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/VJ2S4TK/027.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/rcD3TY9/028.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/DGLRDc7/029.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/1MqMgD7/030.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/5GqYrsq/031.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/MkPt5mG/032.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/37M29bT/033.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/qpz4tkC/034.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/pP9pBNy/035.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/dMX6CqK/036.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/7gzNzsZ/037.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/vBkKvxP/038.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/VmP2LbR/039.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/XCWJXGn/040.png" width="95px" height="135px"></a>
+</div></div>
+<!-- Slider Poster -->
+<div align="center" class="xstv">
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+</div></div>
+<!-- Slider Poster -->
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+</div></div>
+<!-- Slider Poster -->
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+</div></div>
+<!-- Slider Poster -->
+<div><h2><font size="4" color="#FFC600" face="arial"></font></h2>
+<div align="center" class="xstv">
+<a href="go:001"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:002"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:003"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:004"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:005"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:006"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:007"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:008"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:009"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:010"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:011"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:012"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:013"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:014"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:015"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+<a href="go:016"><img class="xstv" src="https://i.ibb.co/F7C5YTm/001.png" width="95px" height="135px"></a>
+<a href="go:017"><img class="xstv" src="https://i.ibb.co/fYkLXbg/002.png" width="95px" height="135px"></a>
+<a href="go:018"><img class="xstv" src="https://i.ibb.co/R2F1rjz/003.png" width="95px" height="135px"></a>
+<a href="go:019"><img class="xstv" src="https://i.ibb.co/8xFcH6N/004.png" width="95px" height="135px"></a>
+<a href="go:020"><img class="xstv" src="https://i.ibb.co/dDPXbDB/005.png" width="95px" height="135px"></a>
+</div></div>
+</body>
+</html>
